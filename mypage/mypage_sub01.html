@@ -1,0 +1,587 @@
+<?php
+	$Menu = "08";
+	$sMenu = "08-1";
+
+	include $_SERVER['DOCUMENT_ROOT'].'/include/header.html'; 
+?>
+
+	<div id="container">
+		<div id="sub_con" class="mypage">
+			<?php
+				include $_SERVER['DOCUMENT_ROOT'].'/include/sub_banner.html';
+			?>
+
+			<div class="contents_con">
+				<?php
+					include $_SERVER['DOCUMENT_ROOT'].'/include/sub_nav.html';
+				?>
+
+				<div class="contents_con">
+					<div class="contents_con">
+						
+						<div class="mypage_con sub">
+							<?php
+								include $_SERVER['DOCUMENT_ROOT'].'/mypage/include/mypage_left.html';
+							?>
+
+							<div class="right_con">
+								<div class="title_con">
+									<div class="back_con m_con">
+										<a href="/mypage/" class="a_btn">
+											<img src="/img/mypage/mypage_sub_title_back_btn.svg" alt="뒤로가기 버튼" class="fx" />
+										</a>
+									</div>
+
+									<div class="text_con">
+										<span>
+											회원정보 수정
+										</span>
+									</div>
+								</div>
+
+								<div class="contents_con">
+
+									<form action="" method="" autocomplete="off">
+										<div class="mypage_sub01_con">
+											<div class="contents_con">
+												<div class="contents_div">
+													<div class="title_con">
+														<span>
+															회원 기본 정보
+														</span>
+													</div>
+
+													<div class="contents_con">
+														<div class="input_con">
+															<ul>
+																<li>
+																	<div class="list_div">
+																		<div class="info_con">
+																			<table cellpadding="0" cellspacing="0">
+																				<tbody>
+																					<tr>
+																						<td align="left" class="title_td">
+																							<span>
+																								연결된 SNS
+																							</span>
+																						</td>
+																						<td align="left" class="info_td">
+																							<div class="mypage_info_con">
+																								<span>
+																									연결된 SNS [재확인]
+																								</span>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div class="list_div">
+																		<div class="info_con">
+																			<table cellpadding="0" cellspacing="0">
+																				<tbody>
+																					<tr>
+																						<td align="left" class="title_td">
+																							<span>
+																								아이디
+																							</span>
+																						</td>
+																						<td align="left" class="info_td">
+																							<div class="mypage_info_con">
+																								<span>
+																									아이디
+																								</span>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div class="list_div">
+																		<div class="info_con">
+																			<table cellpadding="0" cellspacing="0">
+																				<tbody>
+																					<tr>
+																						<td align="left" class="title_td">
+																							<span>
+																								기존 비밀번호
+																							</span>
+																						</td>
+																						<td align="left" class="info_td">
+																							<div class="input_con">
+																								<input type="text" name="" maxlength="12" placeholder="비밀번호" class="input" autocomplete="new-password"/>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div class="list_div">
+																		<div class="info_con">
+																			<table cellpadding="0" cellspacing="0">
+																				<tbody>
+																					<tr>
+																						<td align="left" class="title_td">
+																							<span>
+																								새 비밀번호
+																							</span>
+																						</td>
+																						<td align="left" class="info_td">
+																							<div class="input_con">
+																								<input type="text" name="" maxlength="12" placeholder="비밀번호" class="input" autocomplete="new-password"/>
+																							</div>
+
+																							<div class="intro_con">
+																								<table cellpadding="0" cellspacing="0">
+																									<tbody>
+																										<tr>
+																											<td valign="top" align="left" class="dot_td">
+																												<span>
+																													*
+																												</span>
+																											</td>
+																											<td valign="top" align="left">
+																												<span>
+																													4~12자 미만의 영문/숫자 <br class="m_br" />조합만 가능하며, 영문은 <br class="m_br" />대소문자 구분합니다.
+																												</span>
+																											</td>
+																										</tr>
+																									</tbody>
+																								</table>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div class="list_div">
+																		<div class="info_con">
+																			<table cellpadding="0" cellspacing="0">
+																				<tbody>
+																					<tr>
+																						<td align="left" class="title_td">
+																							<span>
+																								새 비밀번호
+																							</span>
+																						</td>
+																						<td align="left" class="info_td">
+																							<div class="input_con">
+																								<input type="text" name="" maxlength="12" placeholder="비밀번호 확인" class="input" autocomplete="new-password"/>
+																							</div>
+
+																							<!--
+																							<div class="intro_con">
+																								<span>
+																									비밀번호가 일치합니다.
+																									비밀번호가 일치하지 않습니다.
+																								</span>
+																							</div>
+																							-->
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div class="list_div">
+																		<div class="info_con">
+																			<table cellpadding="0" cellspacing="0">
+																				<tbody>
+																					<tr>
+																						<td align="left" class="title_td">
+																							<span>
+																								이름
+																							</span>
+																						</td>
+																						<td align="left" class="info_td">
+																							<div class="mypage_info_con">
+																								<span>
+																									이름
+																								</span>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div class="list_div">
+																		<div class="info_con">
+																			<table cellpadding="0" cellspacing="0">
+																				<tbody>
+																					<tr>
+																						<td align="left" class="title_td">
+																							<span>
+																								법정생년월일
+																							</span>
+																						</td>
+																						<td align="left" class="info_td">
+																							<div class="mypage_info_con">
+																								<span>
+																									0000.00.00
+																								</span>
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div class="list_div">
+																		<div class="info_con">
+																			<table cellpadding="0" cellspacing="0">
+																				<tbody>
+																					<tr>
+																						<td align="left" class="title_td">
+																							<span>
+																								전화번호
+																							</span>
+																						</td>
+																						<td align="left" class="info_td">
+																							<div class="input_con">
+																								<input type="tel" name="" maxlength="13" placeholder="전화번호(‘-’제외)" class="input" onkeydown="onlyNumber(this);" />
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div class="list_div">
+																		<div class="info_con">
+																			<table cellpadding="0" cellspacing="0">
+																				<tbody>
+																					<tr>
+																						<td align="left" class="title_td">
+																							<span>
+																								휴대폰 번호
+																							</span>
+																						</td>
+																						<td align="left" class="info_td">
+																							<div class="input_con">
+																								<input type="tel" name="" maxlength="11" placeholder="휴대폰 번호(‘-’제외)" class="input" onkeydown="onlyNumber(this);" />
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div class="list_div">
+																		<div class="info_con">
+																			<table cellpadding="0" cellspacing="0">
+																				<tbody>
+																					<tr>
+																						<td align="left" class="title_td">
+																							<span>
+																								이메일 주소
+																							</span>
+																						</td>
+																						<td align="left" class="info_td">
+																							<div class="input_con">
+																								<input type="text" name="" placeholder="이메일 주소를 적어주세요." class="input" />
+																							</div>
+																						</td>
+																					</tr>
+																				</tbody>
+																			</table>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div class="list_div">
+																		<div class="title_con">
+																			<span>
+																				주소
+																			</span>
+																		</div>
+
+																		<div class="info_con">
+																			<div class="input_con">
+																				<div class="address_con">
+																					<ul>
+																						<li>
+																							<table cellpadding="0" cellspacing="0">
+																								<tbody>
+																									<tr>
+																										<td align="left" class="input_td">
+																											<input type="text" name="" placeholder="우편번호" class="input" readonly="readonly" />
+																										</td>
+																										<td align="left" class="blank_td">
+																											&nbsp;
+																										</td>
+																										<td align="left" class="btn_td">
+																											<a href="javascript:void(0);" class="a_btn">
+																												주소찾기
+																											</a>
+																										</td>
+																									</tr>
+																								</tbody>
+																							</table>
+																						</li>
+																						<li>
+																							<input type="text" name="" placeholder="기본주소" class="input" readonly="readonly" />
+																						</li>
+																						<li>
+																							<input type="text" name="" placeholder="상세주소를 입력해 주세요." class="input" />
+																						</li>
+																					</ul>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+
+												<div class="contents_div">
+													<div class="title_con">
+														<span>
+															후원자 추가 정보
+														</span>
+													</div>
+
+													<div class="contents_con">
+														<div class="input_con">
+															<ul>
+																<li>
+																	<div class="list_div">
+																		<div class="title_con">
+																			<span>
+																				국세청 연말정산 간소화 서비스 등록
+																			</span>
+																		</div>
+
+																		<div class="info_con">
+																			<div class="input_con">
+																				<div class="tax_con">
+																					<ul>
+																						<li>
+																							<label class="radio_label">
+																								<input type="radio" name="tax_type" value="Y" />
+																								<div class="check_icon"></div>
+																								<span>
+																									등록
+																								</span>
+																							</label>
+																						</li>
+																						<li>
+																							<label class="radio_label">
+																								<input type="radio" name="tax_type" value="N" checked="checked" />
+																								<div class="check_icon"></div>
+																								<span>
+																									등록 안함
+																								</span>
+																							</label>
+																						</li>
+																					</ul>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</li>
+																<li>
+																	<div class="list_div">
+																		<div class="info_con">
+																			<div class="worldvision_con">
+																				<div class="text_con">
+																					<span>
+																						월드비전 소식 및 후원 안내를 위한 수신 <br class="m_br" />선택 시, 월드비전의 다양한 소식 및 안내를 <br class="m_br" />받아보실 수 있습니다. <br />
+																						후원아동 소식 및 기본 후원서비스는 <br class="m_br" />해당 동의 여부와 관계없이 발송됩니다.
+																					</span>
+																				</div>
+
+																				<div class="check_con">
+																					<table cellpadding="0" cellspacing="0">
+																						<tbody>
+																							<tr>
+																								<td align="left" class="check_td">
+																									<label class="checkbox_label">
+																										<input type="checkbox" name="" />
+																										<div class="check_icon"></div>
+																										<span>
+																											[선택] 맞춤형 월드비전 소식 및 후원 <br class="m_br" />안내를 위한 개인정보 수집 및 수신동의
+																										</span>
+																									</label>
+																								</td>
+																								<td align="center" class="btn_td">
+																									<a href="javascript:mypage_terms_popup();" class="a_btn">
+																										[보기]
+																									</a>
+																								</td>
+																							</tr>
+																						</tbody>
+																					</table>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+
+													<div class="terms_popup_con_bg"></div>
+													<div class="terms_popup_con">
+														<div class="contents_con">
+															<div class="title_con">
+																<span>
+																	맞춤형 월드비전 소식 및 후원 <br class="m_br" />안내를 위한 <br class="w_br" />개인정보 수집 및 <br class="m_br" />수신동의
+																</span>
+															</div>
+
+															<div class="posts_con">
+																<div class="scroll_con">
+																	<div class="contents_con">
+																		맞춤형 월드비전 소식 및 후원 안내를 위한 개인정보 수집 및 수신동의
+																	</div>
+																</div>
+															</div>
+
+															<div class="close_btn">
+																<a href="javascript:mypage_terms_popup();" class="a_btn">
+																	<img src="/img/main/terms_popup_close_btn.svg" alt="팝업 닫기 버튼" class="fx" />
+																</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="btn_con">
+												<a href="#" class="a_btn a_btn01">
+													저장
+												</a>
+
+												<a href="/mypage/" class="a_btn a_btn02">
+													취소
+												</a>
+
+												<a href="javascript:secession_popup();" class="a_btn a_btn03">
+													회원탈퇴
+												</a>
+											</div>
+										</div>
+									</form>
+
+								</div>
+							</div>
+						</div>
+							
+					</div>
+				</div>
+			</div>
+
+			<div class="secession_popup_con_bg"></div>
+			<div class="secession_popup_con">
+				<div class="contents_con">
+					<div class="title_con">
+						<span>
+							회원탈퇴
+						</span>
+					</div>
+
+					<div class="contents_con">
+						<form action="" method="" autocomplete="off">
+							<div class="text_con">
+								<div class="title_con">
+									<span>
+										동의 철회를 원하시나요?
+									</span>
+								</div>
+
+								<div class="info_con">
+									<span>
+										동의 철회 시 본서비스와 관련된 모든 정보가 <br class="m_br" />삭제되며, 복구할 수 없습니다. <br />
+										(단 관련 법력에 따라 보존할 필요가 있는경우는 <br class="m_br" />해당 보존기간동안 보관합니다) <br />
+										<br />
+										회원님의 금융거래를 정상적으로 처리하기 <br class="m_br" />위해 동의 유지가 <br class="w_br" />
+										필수적인 경우, 즉시 철회가 <br class="m_br" />불가할 수 있습니다.
+									</span>
+								</div>
+							</div>
+
+							<div class="btn_con">
+								<a href="javascript:secession_popup();" class="a_btn a_btn01">
+									이전으로
+								</a>
+
+								<a href="#" class="a_btn a_btn02">
+									탈퇴하기
+								</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
+			<div class="bg bg01">
+				<img src="/img/mypage/mypage_sub_con_bg01.png" alt="배경01" class="fx w_img" />
+				<img src="/img/mypage/m_mypage_sub_con_bg01.png" alt="모바일 배경01" class="fx m_img" />
+			</div>
+
+			<div class="bg bg02">
+				<img src="/img/mypage/mypage_sub_con_bg02.png" alt="배경02" class="fx w_img" />
+				<img src="/img/mypage/m_mypage_sub_con_bg02.png" alt="모바일 배경02" class="fx m_img" />
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" language="javascript">
+		// 숫자만 입력
+		function onlyNumber(obj) {
+			$(obj).keyup(function(){
+				$(this).val($(this).val().replace(/[^0-9]/g,""));
+			}); 
+		}
+
+		// 약관 팝업
+		function mypage_terms_popup(){
+			if( $(".mypage_con > .right_con > .contents_con .mypage_sub01_con > .contents_con .contents_div .terms_popup_con").css("display") == "none" ){
+				$(".mypage_con > .right_con > .contents_con .mypage_sub01_con > .contents_con .contents_div .terms_popup_con_bg").fadeIn();
+				$(".mypage_con > .right_con > .contents_con .mypage_sub01_con > .contents_con .contents_div .terms_popup_con").fadeIn();
+			}else{
+				$(".mypage_con > .right_con > .contents_con .mypage_sub01_con > .contents_con .contents_div .terms_popup_con_bg").fadeOut();
+				$(".mypage_con > .right_con > .contents_con .mypage_sub01_con > .contents_con .contents_div .terms_popup_con").fadeOut();
+			}
+		}
+
+		// 회원탈퇴 팝업
+		function secession_popup(){
+			if( $(".secession_popup_con").css("display") == "none" ){
+				$(".secession_popup_con_bg").fadeIn();
+				$(".secession_popup_con").fadeIn();
+			}else{
+				$(".secession_popup_con_bg").fadeOut();
+				$(".secession_popup_con").fadeOut();
+			}
+		}
+	</script>
+
+<?php
+	include $_SERVER['DOCUMENT_ROOT'].'/include/footer.html'; 
+?>	

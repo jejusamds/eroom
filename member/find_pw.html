@@ -1,0 +1,301 @@
+<?php
+	$Menu = "07";
+	$sMenu = "07-3";
+	$ssMenu = "07-3-2";
+
+	include $_SERVER['DOCUMENT_ROOT'].'/include/header.html'; 
+?>
+
+	<div id="container">
+		<div id="sub_con" class="member">
+			<?php
+				include $_SERVER['DOCUMENT_ROOT'].'/include/sub_banner.html';
+			?>
+
+			<div class="contents_con">
+				<?php
+					include $_SERVER['DOCUMENT_ROOT'].'/include/sub_nav.html';
+				?>
+
+				<div class="contents_con">
+					<div class="contents_con">
+						
+						<form action="" method="" autocomplete="off">
+							<div class="find_con">
+								<div class="contents_con">
+									<div class="title_con">
+										<span>
+											비밀번호 찾기
+										</span>
+									</div>
+
+									<div class="write_con">
+										<div class="intro_con">
+											<span>
+												등록된 회원정보로 비밀번호를 재설정합니다. <br />
+												입력하신 정보는 비밀번호 찾기에만 <br class="m_br" />사용되며 저장되지 않습니다.
+											</span>
+										</div>
+
+										<div class="nav">
+											<div class="list_con">
+												<ul>
+													<li>
+														<a href="javascript:void(0);" class="on" val="tel">
+															휴대폰 번호
+														</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);" val="email">
+															이메일 주소
+														</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="input_con">
+											<ul>
+												<li>
+													<div class="list_div">
+														<div class="title_con">
+															<span>
+																아이디<span class="dot">*</span>
+															</span>
+														</div>
+
+														<div class="info_con">
+															<div class="input_con">
+																<input type="text" name="" placeholder="아이디를 적어주세요." class="input" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li>
+													<div class="list_div">
+														<div class="title_con">
+															<span>
+																이름<span class="dot">*</span>
+															</span>
+														</div>
+
+														<div class="info_con">
+															<div class="input_con">
+																<input type="text" name="" placeholder="이름을 적어주세요." class="input" />
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="tel_li">
+													<div class="list_div">
+														<div class="title_con">
+															<span>
+																휴대폰 번호<span class="dot">*</span>
+															</span>
+														</div>
+
+														<div class="info_con">
+															<div class="input_con">
+																<div class="tel_con">
+																	<table cellpadding="0" cellspacing="0">
+																		<tbody>
+																			<tr>
+																				<td align="left" class="input_td">
+																					<input type="tel" name="" maxlength="11" placeholder="휴대폰 번호(‘-’제외)" class="input" onkeydown="onlyNumber(this);" />
+																				</td>
+																				<td align="left" class="blank_td">
+																					&nbsp;
+																				</td>
+																				<td align="left" class="btn_td">
+																					<a href="javascript:code_tel();" class="a_btn">
+																						인증요청
+																					</a>
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="tel_li code_li">
+													<div class="list_div">
+														<div class="title_con">
+															<span>
+																인증번호<span class="dot">*</span>
+															</span>
+														</div>
+
+														<div class="info_con">
+															<div class="input_con">
+																<div class="code_con">
+																	<table cellpadding="0" cellspacing="0">
+																		<tbody>
+																			<tr>
+																				<td align="left" class="input_td">
+																					<input type="tel" name="" placeholder="인증번호" class="input" onkeydown="onlyNumber(this);" />
+																				</td>
+																				<td align="left" class="blank_td">
+																					&nbsp;
+																				</td>
+																				<td align="left" class="btn_td">
+																					<a href="javascript:void(0);" class="a_btn">
+																						인증확인
+																					</a>
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="email_li">
+													<div class="list_div">
+														<div class="title_con">
+															<span>
+																이메일 주소<span class="dot">*</span>
+															</span>
+														</div>
+
+														<div class="info_con">
+															<div class="input_con">
+																<div class="email_con">
+																	<table cellpadding="0" cellspacing="0">
+																		<tbody>
+																			<tr>
+																				<td align="left" class="input_td">
+																					<input type="text" name="" placeholder="이메일 주소" class="input" />
+																				</td>
+																				<td align="left" class="blank_td">
+																					&nbsp;
+																				</td>
+																				<td align="left" class="btn_td">
+																					<a href="javascript:code_email();" class="a_btn">
+																						인증요청
+																					</a>
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+												<li class="email_li code_li">
+													<div class="list_div">
+														<div class="title_con">
+															<span>
+																인증번호<span class="dot">*</span>
+															</span>
+														</div>
+
+														<div class="info_con">
+															<div class="input_con">
+																<div class="code_con">
+																	<table cellpadding="0" cellspacing="0">
+																		<tbody>
+																			<tr>
+																				<td align="left" class="input_td">
+																					<input type="tel" name="" placeholder="인증번호" class="input" onkeydown="onlyNumber(this);" />
+																				</td>
+																				<td align="left" class="blank_td">
+																					&nbsp;
+																				</td>
+																				<td align="left" class="btn_td">
+																					<a href="javascript:void(0);" class="a_btn">
+																						인증확인
+																					</a>
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+														</div>
+													</div>
+												</li>
+											</ul>
+										</div>
+
+										<div class="btn_con">
+											<a href="/member/login.html" class="a_btn a_btn01">
+												취소
+											</a>
+
+											<a href="/member/find_pw_end.html" class="a_btn a_btn02">
+												다음
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="bg bg01">
+				<img src="/img/member/member_sub_con_bg01.png" alt="배경01" class="fx w_img" />
+				<img src="/img/member/m_member_sub_con_bg01.png" alt="모바일 배경01" class="fx m_img" />
+			</div>
+
+			<div class="bg bg02">
+				<img src="/img/member/member_sub_con_bg02.png" alt="배경02" class="fx w_img" />
+				<img src="/img/member/m_member_sub_con_bg02.png" alt="모바일 배경02" class="fx m_img" />
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" language="javascript">
+		// 휴대폰 번호 ~ 이메일 주소 클릭 시
+		$(document).on("click",".find_con > .contents_con > .write_con > .nav > .list_con > ul > li a",function(){
+			if( !$(this).hasClass("on") ){
+				$(".find_con > .contents_con > .write_con > .nav > .list_con > ul > li a").each(function(){
+					$(this).removeClass("on");
+				});
+				$(this).addClass("on");
+
+				$(".find_con > .contents_con > .write_con > .input_con > ul > li .list_div > .info_con .input").val("");
+
+				if( $(this).attr("val") == "tel" ){
+					$(".find_con > .contents_con > .write_con > .input_con > ul > .tel_li").show();
+					$(".find_con > .contents_con > .write_con > .input_con > ul > .tel_li .list_div > .info_con .tel_con > table > tbody > tr > .btn_td .a_btn").html("인증요청");
+					$(".find_con > .contents_con > .write_con > .input_con > ul > .tel_li.code_li").hide();
+					$(".find_con > .contents_con > .write_con > .input_con > ul > .email_li").hide();
+				}else{
+					$(".find_con > .contents_con > .write_con > .input_con > ul > .tel_li").hide();
+					$(".find_con > .contents_con > .write_con > .input_con > ul > .email_li").show();
+					$(".find_con > .contents_con > .write_con > .input_con > ul > .email_li .list_div > .info_con .email_con > table > tbody > tr > .btn_td .a_btn").html("인증요청");
+					$(".find_con > .contents_con > .write_con > .input_con > ul > .email_li.code_li").hide();
+				}
+			}
+		});
+		
+		// 휴대폰 번호 인증요청
+		function code_tel(){
+			$(".find_con > .contents_con > .write_con > .input_con > ul > .tel_li .list_div > .info_con .tel_con > table > tbody > tr > .btn_td .a_btn").html("재발송");
+			$(".find_con > .contents_con > .write_con > .input_con > ul > .tel_li.code_li").show();
+		}
+
+		// 이메일 주소 인증요청
+		function code_email(){
+			$(".find_con > .contents_con > .write_con > .input_con > ul > .email_li .list_div > .info_con .email_con > table > tbody > tr > .btn_td .a_btn").html("재발송");
+			$(".find_con > .contents_con > .write_con > .input_con > ul > .email_li.code_li").show();
+		}
+
+		// 숫자만 입력
+		function onlyNumber(obj) {
+			$(obj).keyup(function(){
+				$(this).val($(this).val().replace(/[^0-9]/g,""));
+			}); 
+		}
+	</script>
+
+<?php
+	include $_SERVER['DOCUMENT_ROOT'].'/include/footer.html'; 
+?>	

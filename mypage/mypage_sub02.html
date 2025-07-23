@@ -1,0 +1,68 @@
+<?php
+	$Menu = "08";
+	$sMenu = "08-2";
+
+	include $_SERVER['DOCUMENT_ROOT'].'/include/header.html'; 
+?>
+
+	<div id="container">
+		<div id="sub_con" class="mypage">
+			<?php
+				include $_SERVER['DOCUMENT_ROOT'].'/include/sub_banner.html';
+			?>
+
+			<div class="contents_con">
+				<?php
+					include $_SERVER['DOCUMENT_ROOT'].'/include/sub_nav.html';
+				?>
+
+				<div class="contents_con">
+					<div class="contents_con">
+						
+						<div class="mypage_con sub">
+							<?php
+								include $_SERVER['DOCUMENT_ROOT'].'/mypage/include/mypage_left.html';
+							?>
+
+							<div class="right_con">
+								<div class="title_con">
+									<div class="back_con m_con">
+										<a href="/mypage/" class="a_btn">
+											<img src="/img/mypage/mypage_sub_title_back_btn.svg" alt="뒤로가기 버튼" class="fx" />
+										</a>
+									</div>
+
+									<div class="text_con">
+										<span>
+											나의 후원
+										</span>
+									</div>
+								</div>
+
+								<div class="contents_con">
+
+									
+
+								</div>
+							</div>
+						</div>
+							
+					</div>
+				</div>
+			</div>
+
+			<div class="bg bg01">
+				<img src="/img/mypage/mypage_sub_con_bg01.png" alt="배경01" class="fx w_img" />
+				<img src="/img/mypage/m_mypage_sub_con_bg01.png" alt="모바일 배경01" class="fx m_img" />
+			</div>
+
+			<div class="bg bg02">
+				<img src="/img/mypage/mypage_sub_con_bg02.png" alt="배경02" class="fx w_img" />
+				<img src="/img/mypage/m_mypage_sub_con_bg02.png" alt="모바일 배경02" class="fx m_img" />
+			</div>
+		</div>
+	</div>
+
+<?php
+	include $_SERVER['DOCUMENT_ROOT'].'/include/footer.html'; 
+?>	

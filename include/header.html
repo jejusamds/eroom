@@ -1,0 +1,677 @@
+<?php
+	// 현재 페이지 url
+	$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' ? 'https' : 'http');
+	$http_host = $_SERVER['HTTP_HOST'];
+	$request_uri = $_SERVER['REQUEST_URI'];
+	$url = $protocol . '://' . $http_host . $request_uri;
+	
+	// 페이지 시점 이동
+	$type = $_GET["type"];
+
+	if( $Menu == "01" ){
+		$banner_text01 = "이룸 소개";
+		$banner_text02 = "About Us";
+	}else if( $Menu == "02" ){
+		$banner_text01 = "이룸의 활동";
+		$banner_text02 = "Our Work";
+	}else if( $Menu == "03" ){
+		$banner_text01 = "후원";
+		$banner_text02 = "Get Involved / Take Action";
+	}else if( $Menu == "04" ){
+		$banner_text01 = "소식과 자료";
+		$banner_text02 = "news and data";
+	}else if( $Menu == "05" ){
+		$banner_text01 = "문의하기";
+		$banner_text02 = "Contact us";
+	}else if( $Menu == "06" ){
+		$banner_text01 = "봉사하기";
+		$banner_text02 = "Volunteer activity";
+	}else if( $Menu == "07" ){
+		$banner_text01 = "회원";
+		$banner_text02 = "member";
+	}else if( $Menu == "08" ){
+		$banner_text01 = "마이페이지";
+		$banner_text02 = "mypage";
+	}else{
+		$banner_text01 = "배너 텍스트01";
+		$banner_text02 = "배너 텍스트02";
+	}
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<title>사단법인 서포터즈 이룸</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=3, user-scalable=yes">
+<meta name="format-detection" content="telephone=no" />
+
+<link rel="shortcut icon" href="/img/favicon.ico" />
+
+<!--url 전송시-->
+<meta property="og:url" content="<?=$url?>" />
+<meta property="og:title" content="사단법인 서포터즈 이룸" />
+<meta property="og:site_name" content="사단법인 서포터즈 이룸" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="/img/url_img.png" />
+<meta property="og:description" content="사단법인 서포터즈 이룸" />
+<meta name="description" content="사단법인 서포터즈 이룸" />
+<meta name="keywords" content="사단법인 서포터즈 이룸" />
+<link rel="canonical" href="<?=$url?>" />
+<!--url 전송시-->
+
+<link rel="stylesheet" type="text/css" href="/css/jquery-ui.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/css/common_all.css" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+
+<div id="wrap">
+
+	<div id="header" class="<?php if($Menu=='07' || $Menu=='08'){?>sub<?php }else{?><?php }?>">
+		<div class="contents_con">
+			<div class="left_con">
+				<div class="logo_con">
+					<a href="/index_tmp.html">
+						<img src="/img/main/main_logo.svg" alt="메인 로고" class="fx off" />
+						<img src="/img/main/main_logo_on.svg" alt="메인 로고 on" class="fx on" />
+					</a>
+				</div>
+
+				<div class="nav_con">
+					<div class="list_con">
+						<ul>
+							<li>
+								<a href="/introduce/introduce_sub01.html">
+									이룸 소개
+								</a>
+
+								<div class="sub_nav">
+									<div class="contents_con">
+										<ul>
+											<?php if( $Menu != "01" ){ ?>
+											<li>
+												<a href="/introduce/introduce_sub01.html?type=01">
+													서포터즈 이룸
+												</a>
+											</li>
+											<li>
+												<a href="/introduce/introduce_sub01.html?type=05">
+													조직구성
+												</a>
+											</li>
+											<li>
+												<a href="/introduce/introduce_sub01.html?type=06">
+													투명경영
+												</a>
+											</li>
+											<li>
+												<a href="/introduce/introduce_sub01.html?type=07">
+													찾아오시는 길
+												</a>
+											</li>
+											<?php }else{ ?>
+											<li>
+												<a href="javascript:move_scroll('go_info01_con');">
+													서포터즈 이룸
+												</a>
+											</li>
+											<li>
+												<a href="javascript:move_scroll('go_info05_con');">
+													조직구성
+												</a>
+											</li>
+											<li>
+												<a href="javascript:move_scroll('go_info06_con');">
+													투명경영
+												</a>
+											</li>
+											<li>
+												<a href="javascript:move_scroll('go_info07_con');">
+													찾아오시는 길
+												</a>
+											</li>
+											<?php } ?>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="/activity/activity_sub01.html">
+									이룸 활동
+								</a>
+
+								<div class="sub_nav">
+									<div class="contents_con">
+										<ul>
+											<li>
+												<a href="/activity/activity_sub01.html">
+													비타민 박스
+												</a>
+											</li>
+											<li>
+												<a href="/activity/activity_sub02.html">
+													비타민 헬프
+												</a>
+											</li>
+											<li>
+												<a href="/activity/activity_sub03.html">
+													비타민 스타트 사업
+												</a>
+											</li>
+											<li>
+												<a href="/activity/activity_sub04.html">
+													비타민 봉사단
+												</a>
+											</li>
+											<li>
+												<a href="/activity/activity_sub05.html">
+													청년 비타민 봉사단
+												</a>
+											</li>
+											<li>
+												<a href="/activity/activity_sub06.html">
+													리더 육성사업
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="/sponsor/sponsor_sub01.html">
+									참여와 후원
+								</a>
+
+								<div class="sub_nav">
+									<div class="contents_con">
+										<ul>
+											<li>
+												<a href="/sponsor/sponsor_sub01.html">
+													정기 후원
+												</a>
+											</li>
+											<li>
+												<a href="/sponsor/sponsor_sub02.html">
+													일시 후원
+												</a>
+											</li>
+											<li>
+												<a href="/sponsor/sponsor_sub03.html">
+													기업/단체 후원
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="/notice/notice_sub01.html">
+									소식과 자료
+								</a>
+
+								<div class="sub_nav">
+									<div class="contents_con">
+										<ul>
+											<li>
+												<a href="/notice/notice_sub01.html">
+													새소식
+												</a>
+											</li>
+											<li>
+												<a href="/notice/notice_sub02.html">
+													이룸 스토리
+												</a>
+											</li>
+											<li>
+												<a href="/notice/notice_sub03.html">
+													보고서 및 발간물
+												</a>
+											</li>
+											<li>
+												<a href="/notice/notice_sub04.html">
+													미디어 자료실
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li>
+								<a href="/inquiry/inquiry_sub01.html">
+									문의하기
+								</a>
+
+								<div class="sub_nav">
+									<div class="contents_con">
+										<ul>
+											<li>
+												<a href="/inquiry/inquiry_sub01.html" class="<?php if($sMenu=='05-1'){?>on<?php }else{?><?php }?>">
+													자주 묻는 질문
+												</a>
+											</li>
+											<li>
+												<a href="/inquiry/inquiry_sub02.html" class="<?php if($sMenu=='05-2'){?>on<?php }else{?><?php }?>">
+													온라인 문의
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="search_con">
+					<form action="" method="" autocomplete="off">
+						<div class="input_con">
+							<table cellpadding="0" cellspacing="0">
+								<tbody>
+									<tr>
+										<td align="left" class="input_td">
+											<input type="text" name="" placeholder="검색해주세요." class="input" />
+										</td>
+										<td align="left" class="blank_td">
+											&nbsp;
+										</td>
+										<td align="left" class="btn_td">
+											<a href="#">
+												<img src="/img/main/header_search_btn.png" alt="헤더 검색 버튼" class="fx off" />
+												<img src="/img/main/header_search_btn_on.svg" alt="헤더 검색 버튼 on" class="fx on" />
+											</a>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</form>
+				</div>
+			</div>
+
+			<div class="right_con">
+				<div class="member_con">
+					<div class="list_con">
+						<ul>
+							<li>
+								<a href="/member/login.html">
+									로그인
+								</a>
+							</li>
+							<li class="bar_li">
+								<div class="bar"></div>
+							</li>
+							<li>
+								<a href="/member/join_step01.html">
+									회원가입
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<!--
+					<a href="/mypage/">
+						마이페이지
+					</a>
+					-->
+				</div>
+
+				<div class="btn_con">
+					<div class="list_con">
+						<ul>
+							<li>
+								<a href="/sponsor/sponsor_sub01.html" class="a_btn">
+									후원하기
+								</a>
+							</li>
+							<li>
+								<a href="/service/service_sub01.html" class="a_btn">
+									봉사하기
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="m_header" class="<?php if($Menu=='07'){?>sub<?php }else{?><?php }?>">
+		<div class="contents_con">
+			<table cellpadding="0" cellspacing="0">
+				<tbody>
+					<tr>
+						<td align="left" class="logo_td">
+							<a href="/index_tmp.html">
+								<img src="/img/main/m_main_logo.svg" alt="모바일 메인 로고" class="fx off" />
+								<img src="/img/main/m_main_logo_on.svg" alt="모바일 메인 로고 on" class="fx on" />
+							</a>
+						</td>
+						<td align="left" class="blank_td">
+							&nbsp;
+						</td>
+						<td align="left" class="btn_td">
+							<ul>
+								<li>
+									<a href="javascript:m_main_nav();">
+										<img src="/img/main/m_header_search_btn.svg" alt="모바일 헤더 검색 버튼" class="fx off" />
+										<img src="/img/main/m_header_search_btn_on.svg" alt="모바일 헤더 검색 버튼 on" class="fx on" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:m_main_nav();">
+										<img src="/img/main/m_header_menu_btn.svg" alt="모바일 헤더 메뉴 버튼" class="fx off" />
+										<img src="/img/main/m_header_menu_btn_on.svg" alt="모바일 헤더 메뉴 버튼 on" class="fx on" />
+									</a>
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	<div id="m_main_nav_bg"></div>
+	<div id="m_main_nav">
+		<div class="contents_con">
+			<div class="search_con">
+				<form action="" method="" autocomplete="off">
+					<div class="input_con">
+						<table cellpadding="0" cellspacing="0">
+							<tbody>
+								<tr>
+									<td align="left" class="input_td">
+										<input type="text" name="" placeholder="검색해주세요." class="input" />
+									</td>
+									<td align="left" class="blank_td">
+										&nbsp;
+									</td>
+									<td align="left" class="btn_td">
+										<a href="#">
+											<img src="/img/main/m_main_nav_search_btn.svg" alt="검색 버튼" class="fx" />
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</form>
+			</div>
+
+			<div class="list_con">
+				<div class="scroll_con">
+					<div class="contents_con">
+						<ul>
+							<li>
+								<a href="javascript:void(0);" class="a_btn">
+									<table cellpadding="0" cellspacing="0">
+										<tbody>
+											<tr>
+												<td align="left" class="text_td">
+													<span>
+														이룸 소개
+													</span>
+												</td>
+												<td align="left" class="arrow_td">
+													<img src="/img/main/m_main_nav_list_arrow.svg" alt="화살표" class="fx" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</a>
+
+								<div class="sub_nav">
+									<ul>
+										<?php if( $Menu != "01" ){ ?>
+										<li>
+											<a href="/introduce/introduce_sub01.html?type=01">
+												서포터즈 이룸
+											</a>
+										</li>
+										<li>
+											<a href="/introduce/introduce_sub01.html?type=05">
+												조직구성
+											</a>
+										</li>
+										<li>
+											<a href="/introduce/introduce_sub01.html?type=06">
+												투명경영
+											</a>
+										</li>
+										<li>
+											<a href="/introduce/introduce_sub01.html?type=07">
+												찾아오시는 길
+											</a>
+										</li>
+										<?php }else{ ?>
+										<li>
+											<a href="javascript:m_move_scroll('go_info01_con');">
+												서포터즈 이룸
+											</a>
+										</li>
+										<li>
+											<a href="javascript:m_move_scroll('go_info05_con');">
+												조직구성
+											</a>
+										</li>
+										<li>
+											<a href="javascript:m_move_scroll('go_info06_con');">
+												투명경영
+											</a>
+										</li>
+										<li>
+											<a href="javascript:m_move_scroll('go_info07_con');">
+												찾아오시는 길
+											</a>
+										</li>
+										<?php } ?>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="a_btn">
+									<table cellpadding="0" cellspacing="0">
+										<tbody>
+											<tr>
+												<td align="left" class="text_td">
+													<span>
+														이룸 활동
+													</span>
+												</td>
+												<td align="left" class="arrow_td">
+													<img src="/img/main/m_main_nav_list_arrow.svg" alt="화살표" class="fx" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</a>
+
+								<div class="sub_nav">
+									<ul>
+										<li>
+											<a href="/activity/activity_sub01.html">
+												비타민 박스
+											</a>
+										</li>
+										<li>
+											<a href="/activity/activity_sub02.html">
+												비타민 헬프
+											</a>
+										</li>
+										<li>
+											<a href="/activity/activity_sub03.html">
+												비타민 스타트 사업
+											</a>
+										</li>
+										<li>
+											<a href="/activity/activity_sub04.html">
+												비타민 봉사단
+											</a>
+										</li>
+										<li>
+											<a href="/activity/activity_sub05.html">
+												청년 비타민 봉사단
+											</a>
+										</li>
+										<li>
+											<a href="/activity/activity_sub06.html">
+												리더 육성사업
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="a_btn">
+									<table cellpadding="0" cellspacing="0">
+										<tbody>
+											<tr>
+												<td align="left" class="text_td">
+													<span>
+														참여와 후원
+													</span>
+												</td>
+												<td align="left" class="arrow_td">
+													<img src="/img/main/m_main_nav_list_arrow.svg" alt="화살표" class="fx" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</a>
+
+								<div class="sub_nav">
+									<ul>
+										<li>
+											<a href="/sponsor/sponsor_sub01.html">
+												정기 후원
+											</a>
+										</li>
+										<li>
+											<a href="/sponsor/sponsor_sub02.html">
+												일시 후원
+											</a>
+										</li>
+										<li>
+											<a href="/sponsor/sponsor_sub03.html">
+												기업/단체 후원
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="a_btn">
+									<table cellpadding="0" cellspacing="0">
+										<tbody>
+											<tr>
+												<td align="left" class="text_td">
+													<span>
+														소식과 자료
+													</span>
+												</td>
+												<td align="left" class="arrow_td">
+													<img src="/img/main/m_main_nav_list_arrow.svg" alt="화살표" class="fx" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</a>
+
+								<div class="sub_nav">
+									<ul>
+										<li>
+											<a href="/notice/notice_sub01.html">
+												새소식
+											</a>
+										</li>
+										<li>
+											<a href="/notice/notice_sub02.html">
+												이룸 스토리
+											</a>
+										</li>
+										<li>
+											<a href="/notice/notice_sub03.html">
+												보고서 및 발간물
+											</a>
+										</li>
+										<li>
+											<a href="/notice/notice_sub04.html">
+												미디어 자료실
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="a_btn">
+									<table cellpadding="0" cellspacing="0">
+										<tbody>
+											<tr>
+												<td align="left" class="text_td">
+													<span>
+														문의하기
+													</span>
+												</td>
+												<td align="left" class="arrow_td">
+													<img src="/img/main/m_main_nav_list_arrow.svg" alt="화살표" class="fx" />
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</a>
+
+								<div class="sub_nav">
+									<ul>
+										<li>
+											<a href="/inquiry/inquiry_sub01.html" class="<?php if($sMenu=='05-1'){?>on<?php }else{?><?php }?>">
+												자주 묻는 질문
+											</a>
+										</li>
+										<li>
+											<a href="/inquiry/inquiry_sub02.html" class="<?php if($sMenu=='05-2'){?>on<?php }else{?><?php }?>">
+												온라인 문의
+											</a>
+										</li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="member_con">
+				<div class="list_con">
+					<ul>
+						<li>
+							<a href="/member/login.html">
+								로그인
+							</a>
+						</li>
+						<li class="bar_li">
+							<div class="bar"></div>
+						</li>
+						<li>
+							<a href="/member/join_step01.html">
+								회원가입
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<!--
+				<a href="/mypage/">
+					마이페이지
+				</a>
+				-->
+			</div>
+		</div>
+	</div>

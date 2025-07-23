@@ -1,0 +1,401 @@
+<?php
+	$Menu = "07";
+	$sMenu = "07-2";
+	$ssMenu = "07-2-2";
+
+	include $_SERVER['DOCUMENT_ROOT'].'/include/header.html'; 
+?>
+
+	<div id="container">
+		<div id="sub_con" class="member">
+			<?php
+				include $_SERVER['DOCUMENT_ROOT'].'/include/sub_banner.html';
+			?>
+
+			<div class="contents_con">
+				<?php
+					include $_SERVER['DOCUMENT_ROOT'].'/include/sub_nav.html';
+				?>
+
+				<div class="contents_con">
+					<div class="contents_con">
+						
+						<form action="" method="" autocomplete="off">
+							<div class="join_con">
+								<div class="contents_con">
+									<div class="title_con">
+										<span>
+											회원가입
+										</span>
+									</div>
+
+									<div class="write_con">
+										<div class="step_con">
+											<div class="list_con">
+												<ul>
+													<li>
+														<div class="list_div">
+															<div class="dot_con">
+																<div class="dot"></div>
+															</div>
+
+															<div class="text_con">
+																<span>
+																	약관동의
+																</span>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_div on">
+															<div class="dot_con">
+																<div class="dot"></div>
+															</div>
+
+															<div class="text_con">
+																<span>
+																	회원정보 입력
+																</span>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_div">
+															<div class="dot_con">
+																<div class="dot"></div>
+															</div>
+
+															<div class="text_con">
+																<span>
+																	가입신청 완료
+																</span>
+															</div>
+														</div>
+													</li>
+												</ul>
+
+												<div class="line"></div>
+											</div>
+										</div>
+
+										<div class="contents_con">
+											<div class="input_con">
+												<ul>
+													<li>
+														<div class="list_div">
+															<div class="title_con">
+																<span>
+																	아이디<span class="dot">*</span>
+																</span>
+															</div>
+
+															<div class="info_con">
+																<div class="input_con">
+																	<div class="id_con">
+																		<table cellpadding="0" cellspacing="0">
+																			<tbody>
+																				<tr>
+																					<td align="left" class="input_td">
+																						<input type="text" name="" placeholder="아이디를 적어주세요." class="input" />
+																					</td>
+																					<td align="left" class="blank_td">
+																						&nbsp;
+																					</td>
+																					<td align="left" class="btn_td">
+																						<a href="javascript:void(0);" class="a_btn">
+																							중복확인
+																						</a>
+																					</td>
+																				</tr>
+																			</tbody>
+																		</table>
+																	</div>
+																</div>
+
+																<!--
+																<div class="intro_con">
+																	<span>
+																		사용가능한 아이디 입니다.
+																		중복된 아이디 입니다.
+																	</span>
+																</div>
+																-->
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_div">
+															<div class="title_con">
+																<span>
+																	비밀번호<span class="dot">*</span>
+																</span>
+															</div>
+
+															<div class="info_con">
+																<div class="input_con">
+																	<input type="text" name="" maxlength="12" placeholder="비밀번호" class="input" autocomplete="new-password"/>
+																</div>
+
+																<div class="intro_con">
+																	<table cellpadding="0" cellspacing="0">
+																		<tbody>
+																			<tr>
+																				<td valign="top" align="left" class="dot_td">
+																					<span>
+																						*
+																					</span>
+																				</td>
+																				<td valign="top" align="left">
+																					<span>
+																						4~12자 미만의 영문/숫자 조합만 가능하며, <br class="m_br" />영문은 대소문자 구분합니다.
+																					</span>
+																				</td>
+																			</tr>
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_div">
+															<div class="title_con">
+																<span>
+																	비밀번호 확인<span class="dot">*</span>
+																</span>
+															</div>
+
+															<div class="info_con">
+																<div class="input_con">
+																	<input type="text" name="" maxlength="12" placeholder="비밀번호 확인" class="input" autocomplete="new-password"/>
+																</div>
+
+																<!--
+																<div class="intro_con">
+																	<span>
+																		비밀번호가 일치합니다.
+																		비밀번호가 일치하지 않습니다.
+																	</span>
+																</div>
+																-->
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_div">
+															<div class="title_con">
+																<span>
+																	이름<span class="dot">*</span>
+																</span>
+															</div>
+
+															<div class="info_con">
+																<div class="input_con">
+																	<input type="text" name="" placeholder="이름을 적어주세요." class="input" />
+																</div>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_div">
+															<div class="title_con">
+																<span>
+																	법정생년월일<span class="dot">*</span>
+																</span>
+															</div>
+
+															<div class="info_con">
+																<div class="input_con">
+																	<input type="tel" name="" placeholder="법정생년월일 8자리(예: 2025.01.29)" id="birthdate_input" class="input" />
+																</div>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_div">
+															<div class="title_con">
+																<span>
+																	전화번호<span class="dot">*</span>
+																</span>
+															</div>
+
+															<div class="info_con">
+																<div class="input_con">
+																	<input type="tel" name="" maxlength="13" placeholder="전화번호(‘-’제외)" class="input" onkeydown="onlyNumber(this);" />
+																</div>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_div">
+															<div class="title_con">
+																<span>
+																	휴대폰 번호<span class="dot">*</span>
+																</span>
+															</div>
+
+															<div class="info_con">
+																<div class="input_con">
+																	<input type="tel" name="" maxlength="11" placeholder="휴대폰 번호(‘-’제외)" class="input" onkeydown="onlyNumber(this);" />
+																</div>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_div">
+															<div class="title_con">
+																<span>
+																	이메일 주소<span class="dot">*</span>
+																</span>
+															</div>
+
+															<div class="info_con">
+																<div class="input_con">
+																	<input type="text" name="" placeholder="이메일 주소를 적어주세요." class="input" />
+																</div>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_div">
+															<div class="title_con">
+																<span>
+																	성별<span class="dot">*</span>
+																</span>
+															</div>
+
+															<div class="info_con">
+																<div class="input_con">
+																	<div class="gender_con">
+																		<ul>
+																			<li>
+																				<label class="radio_label">
+																					<input type="radio" name="gender_type" value="남" checked="checked" />
+																					<div class="check_icon"></div>
+																					<span>
+																						남
+																					</span>
+																				</label>
+																			</li>
+																			<li>
+																				<label class="radio_label">
+																					<input type="radio" name="gender_type" value="여" />
+																					<div class="check_icon"></div>
+																					<span>
+																						여
+																					</span>
+																				</label>
+																			</li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</li>
+													<li>
+														<div class="list_div">
+															<div class="title_con">
+																<span>
+																	주소<span class="dot">*</span>
+																</span>
+															</div>
+
+															<div class="info_con">
+																<div class="input_con">
+																	<div class="address_con">
+																		<ul>
+																			<li>
+																				<table cellpadding="0" cellspacing="0">
+																					<tbody>
+																						<tr>
+																							<td align="left" class="input_td">
+																								<input type="text" name="" placeholder="우편번호" class="input" readonly="readonly" />
+																							</td>
+																							<td align="left" class="blank_td">
+																								&nbsp;
+																							</td>
+																							<td align="left" class="btn_td">
+																								<a href="javascript:void(0);" class="a_btn">
+																									주소찾기
+																								</a>
+																							</td>
+																						</tr>
+																					</tbody>
+																				</table>
+																			</li>
+																			<li>
+																				<input type="text" name="" placeholder="기본주소" class="input" readonly="readonly" />
+																			</li>
+																			<li>
+																				<input type="text" name="" placeholder="상세주소를 입력해 주세요." class="input" />
+																			</li>
+																		</ul>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+
+										<div class="btn_con">
+											<a href="/member/join_step01.html" class="a_btn a_btn01">
+												이전
+											</a>
+
+											<a href="/member/join_step03.html" class="a_btn a_btn02">
+												가입하기
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+
+			<div class="bg bg01">
+				<img src="/img/member/member_sub_con_bg01.png" alt="배경01" class="fx w_img" />
+				<img src="/img/member/m_member_sub_con_bg01.png" alt="모바일 배경01" class="fx m_img" />
+			</div>
+
+			<div class="bg bg02">
+				<img src="/img/member/member_sub_con_bg02.png" alt="배경02" class="fx w_img" />
+				<img src="/img/member/m_member_sub_con_bg02.png" alt="모바일 배경02" class="fx m_img" />
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" language="javascript">
+		// 생년월일
+		const input = document.getElementById('birthdate_input');
+		input.addEventListener('input', function() {
+			let value = input.value.replace(/\D/g, ''); // 숫자 이외 제거
+			if (value.length > 8) value = value.slice(0, 8); // 최대 8자리
+
+			let formatted = '';
+			if (value.length <= 4) {
+				formatted = value;
+			} else if (value.length <= 6) {
+				formatted = `${value.slice(0, 4)}.${value.slice(4)}`;
+			} else {
+				formatted = `${value.slice(0, 4)}.${value.slice(4, 6)}.${value.slice(6)}`;
+			}
+
+			input.value = formatted;
+		});
+
+		// 숫자만 입력
+		function onlyNumber(obj) {
+			$(obj).keyup(function(){
+				$(this).val($(this).val().replace(/[^0-9]/g,""));
+			}); 
+		}
+	</script>
+
+<?php
+	include $_SERVER['DOCUMENT_ROOT'].'/include/footer.html'; 
+?>	

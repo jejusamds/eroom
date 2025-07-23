@@ -1,0 +1,188 @@
+				<?php if( $Menu != "06" && $Menu != "07" && $Menu != "08" ){ ?>
+				<div class="nav">
+					<div class="contents_con">
+						<div class="swiper sub_nav_slide">
+							<div class="swiper-wrapper">
+								<?php if( $Menu == "01" ){ ?>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="javascript:move_scroll('go_info01_con');" class="on">
+										서포터즈 이룸
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="javascript:move_scroll('go_info05_con');">
+										조직구성
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="javascript:move_scroll('go_info06_con');">
+										투명경영
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="javascript:move_scroll('go_info07_con');">
+										찾아오시는 길
+									</a>
+								</div>
+								<?php }else if( $Menu == "02" ){ ?>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/activity/activity_sub01.html" class="<?php if($sMenu=='02-1'){?>on<?php }else{?><?php }?>">
+										비타민 박스
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/activity/activity_sub02.html" class="<?php if($sMenu=='02-2'){?>on<?php }else{?><?php }?>">
+										비타민 헬프
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/activity/activity_sub03.html" class="<?php if($sMenu=='02-3'){?>on<?php }else{?><?php }?>">
+										비타민 스타트 사업
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/activity/activity_sub04.html" class="<?php if($sMenu=='02-4'){?>on<?php }else{?><?php }?>">
+										비타민 봉사단
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/activity/activity_sub05.html" class="<?php if($sMenu=='02-5'){?>on<?php }else{?><?php }?>">
+										청년 비타민 봉사단
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/activity/activity_sub06.html" class="<?php if($sMenu=='02-6'){?>on<?php }else{?><?php }?>">
+										리더 육성사업
+									</a>
+								</div>
+								<?php }else if( $Menu == "03" ){ ?>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/sponsor/sponsor_sub01.html" class="<?php if($sMenu=='03-1'){?>on<?php }else{?><?php }?>">
+										정기 후원
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/sponsor/sponsor_sub02.html" class="<?php if($sMenu=='03-2'){?>on<?php }else{?><?php }?>">
+										일시 후원
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/sponsor/sponsor_sub03.html" class="<?php if($sMenu=='03-3'){?>on<?php }else{?><?php }?>">
+										기업/단체 후원
+									</a>
+								</div>
+								<?php }else if( $Menu == "04" ){ ?>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/notice/notice_sub01.html" class="<?php if($sMenu=='04-1'){?>on<?php }else{?><?php }?>">
+										새소식
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/notice/notice_sub02.html" class="<?php if($sMenu=='04-2'){?>on<?php }else{?><?php }?>">
+										이룸 스토리
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/notice/notice_sub03.html" class="<?php if($sMenu=='04-3'){?>on<?php }else{?><?php }?>">
+										보고서 및 발간물
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/notice/notice_sub04.html" class="<?php if($sMenu=='04-4'){?>on<?php }else{?><?php }?>">
+										미디어 자료실
+									</a>
+								</div>
+								<?php }else if( $Menu == "05" ){ ?>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/inquiry/inquiry_sub01.html" class="<?php if($sMenu=='05-1'){?>on<?php }else{?><?php }?>">
+										자주 묻는 질문
+									</a>
+								</div>
+								<div class="swiper-slide sub_nav_slide_div">
+									<a href="/inquiry/inquiry_sub02.html" class="<?php if($sMenu=='05-2'){?>on<?php }else{?><?php }?>">
+										온라인 문의
+									</a>
+								</div>
+								<?php } ?>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<script type="text/javascript" language="javascript">
+					// 초기 화면 크기 저장
+					var sub_nav_initialWidth = window.innerWidth;
+					var sub_nav_isFirstLoad = true;
+
+					// 리사이즈 예외처리
+					var sub_nav_resizeTimer;
+
+					// 서브 메뉴 슬라이드
+					var sub_nav_slide = null;
+
+					// 화면 리사이징
+					$(window).resize(function() {
+						// 현재 window 너비
+						var currentWidth = window.innerWidth;
+
+						// 너비가 변경되지 않은 경우(스크롤, 상태바 동작) 무시
+						if (currentWidth === sub_nav_initialWidth && !sub_nav_isFirstLoad) {
+							return;
+						}
+
+						clearTimeout(sub_nav_resizeTimer);
+						
+						// 화면 너비
+						if( window.innerWidth > 1024 ){
+							
+						}else{
+							// 서브 메뉴 슬라이드 예외처리
+							$("#sub_con > .contents_con > .nav > .contents_con").css({"opacity":"0","transition":"none"});	
+						}
+
+						sub_nav_resizeTimer = setTimeout(function() {
+							// 실제 리사이징이 발생한 경우에만 처리
+							if (currentWidth !== sub_nav_initialWidth || sub_nav_isFirstLoad) {
+								// 서브 메뉴 슬라이드 파괴
+								if (sub_nav_slide) {
+									sub_nav_slide.destroy();
+									sub_nav_slide = null;
+								}
+
+								// 화면 너비
+								if( window.innerWidth > 1024 ){
+									// 서브 메뉴 슬라이드
+									sub_nav_slide = new Swiper ('.sub_nav_slide', {
+										slidesPerView: 'auto',
+										loop: false,
+										observer: true,
+										observeParents: true,
+										simulateTouch: false,
+										allowTouchMove: false,
+									});
+								}else{
+									// 서브 메뉴 슬라이드
+									sub_nav_slide = new Swiper ('.sub_nav_slide', {
+										slidesPerView: 'auto',
+										speed: 1500,
+										loop: false,
+										observer: true,
+										observeParents: true,
+									});
+									
+									<?php if( $sMenu_slide != "" ){ ?>
+									// 서브 메뉴 슬라이드 slideTo
+									sub_nav_slide.slideTo(<?=$sMenu_slide?>, 0);
+									<?php } ?>
+
+									// 서브 메뉴 슬라이드 예외처리
+									$("#sub_con > .contents_con > .nav > .contents_con").css({"opacity":"1","transition":"all 0.5s ease"});
+								}
+
+								sub_nav_initialWidth = currentWidth;
+								sub_nav_isFirstLoad = false;
+							}
+						}, 500);
+					});
+				</script>
+				<?php } ?>
