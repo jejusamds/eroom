@@ -450,6 +450,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
 </script>
 <script src="/js/form-controller.js"></script>
 <script>
+    const submitter = new FormSubmitter('join_form');
     document.getElementById("join_form").addEventListener("submit", function (e) {
         e.preventDefault();
         const form = this;
@@ -465,7 +466,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
         if (mobile) {
             form.f_mobile.value = `${mobile.slice(0, 3)}-${mobile.slice(3, mobile.length - 4)}-${mobile.slice(mobile.length - 4)}`;
         }
-        submitForm("join_form");
+        submitter.submit();
     });
     document.getElementById('btn_submit').addEventListener('click', function (e) {
         e.preventDefault();
