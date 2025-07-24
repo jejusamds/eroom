@@ -444,8 +444,6 @@
 			
 		}
 
-		console.log("베리중");
-
 		basic_resizeTimer = setTimeout(function() {
 			// 실제 리사이징이 발생한 경우에만 처리
 			if (currentWidth !== basic_initialWidth || basic_isFirstLoad) {
@@ -476,8 +474,6 @@
 					// 회전 이벤트 감지
 					window.addEventListener("resize", checkOrientation);
 				}
-
-				console.log("베리끝");
 
 				basic_initialWidth = currentWidth;
 				basic_isFirstLoad = false;

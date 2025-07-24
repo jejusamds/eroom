@@ -86,6 +86,7 @@ class FormSubmitter {
 
         // ■ 중복확인 버튼 바인딩
         const checkBtn = this.form.querySelector('#btn_check_id');
+        console.log(checkBtn);
         if (checkBtn) {
             checkBtn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -98,6 +99,7 @@ class FormSubmitter {
     async checkDuplicateId() {
         const el = this.form.querySelector('#f_user_id');
         const id = el.value.trim();
+        console.log(id);
         if (!id) {
             alert('아이디를 입력해주세요.');
             el.focus();
@@ -106,7 +108,7 @@ class FormSubmitter {
 
         const fd = new FormData();
         fd.append('mode', 'check_id');
-        fd.append('csrf_token', this.form.querySelector('input[name="csrf_token"]').value);
+        //fd.append('csrf_token', this.form.querySelector('input[name="csrf_token"]').value);
         fd.append('f_user_id', id);
 
         try {
@@ -115,6 +117,9 @@ class FormSubmitter {
             console.log(json);
             if (json.result === 'exist') {
                 alert('이미 사용 중인 아이디입니다.');
+                el.focus();
+            } else if (json.result === 'hangul') {
+                alert('아이디에 한글은 사용할 수 없습니다.');
                 el.focus();
             } else {
                 alert('사용 가능한 아이디입니다.');
@@ -149,7 +154,7 @@ class FormSubmitter {
     }
 
     handleResponse(data) {
-        //console.log(data);
+        console.log(data);
         if (data.result != 'ok') {
             alert(data.msg);
         }
@@ -161,7 +166,7 @@ class FormSubmitter {
             if (data.redirect != '') {
                 location.href = data.redirect;
             }
-            this.resetForm();
+            //this.resetForm();
             // 추가 리셋. id="f_auth_number"
             //$('#f_auth_number').val('');
         }

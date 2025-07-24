@@ -103,7 +103,7 @@
 												취소
 											</a>
 
-											<a href="/member/join_step02.html" class="a_btn a_btn02">
+											<a href="javascript:void(0);" class="a_btn a_btn02" onclick="step_next();">
 												다음
 											</a>
 										</div>
@@ -127,6 +127,19 @@
 			</div>
 		</div>
 	</div>
+
+    <script>
+        function step_next() {
+            // Check if the checkbox is checked
+            var checkbox = document.querySelector('input[type="checkbox"]');
+            if (!checkbox.checked) {
+                alert('개인정보수집 및 이용에 동의해 주세요.');
+                return false; // Prevent form submission
+            }
+
+            location.href = '/member/join_step02.html';
+        }
+    </script>
 
 <?php
 	include $_SERVER['DOCUMENT_ROOT'].'/include/footer.html'; 

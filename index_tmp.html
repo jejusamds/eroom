@@ -216,9 +216,9 @@
 										</span>
 									</td>
 									<td align="left" class="info_td">
-										<div class="swiper main_info02_slide01">
+										<div class="swiper main_info02_slide02">
 											<div class="swiper-wrapper">
-												<div class="swiper-slide main_info02_slide01_div" data-swiper-autoplay="4000">
+												<div class="swiper-slide main_info02_slide02_div" data-swiper-autoplay="4000">
 													<a href="#">
 														<table cellpadding="0" cellspacing="0">
 															<tbody>
@@ -236,7 +236,7 @@
 														</table>
 													</a>
 												</div>
-												<div class="swiper-slide main_info02_slide01_div" data-swiper-autoplay="4000">
+												<div class="swiper-slide main_info02_slide02_div" data-swiper-autoplay="4000">
 													<a href="#">
 														<table cellpadding="0" cellspacing="0">
 															<tbody>
@@ -790,7 +790,7 @@
 																	정기후원 바로가기
 																</span>
 															</td>
-															<td align="left" class="icon_td">
+															<td align="left" class="arrow_td">
 																<img src="/img/main/main_info07_list_btn_arrow.svg" alt="화살표" class="fx" />
 															</td>
 														</tr>
@@ -844,7 +844,7 @@
 																	정기후원 바로가기
 																</span>
 															</td>
-															<td align="left" class="icon_td">
+															<td align="left" class="arrow_td">
 																<img src="/img/main/main_info07_list_btn_arrow.svg" alt="화살표" class="fx" />
 															</td>
 														</tr>
@@ -898,7 +898,7 @@
 																	자원봉사 바로가기
 																</span>
 															</td>
-															<td align="left" class="icon_td">
+															<td align="left" class="arrow_td">
 																<img src="/img/main/main_info07_list_btn_arrow.svg" alt="화살표" class="fx" />
 															</td>
 														</tr>
@@ -952,7 +952,7 @@
 																	기업협력 바로가기
 																</span>
 															</td>
-															<td align="left" class="icon_td">
+															<td align="left" class="arrow_td">
 																<img src="/img/main/main_info07_list_btn_arrow.svg" alt="화살표" class="fx" />
 															</td>
 														</tr>
@@ -1062,7 +1062,68 @@
 
 			<div class="info09_con">
 				<div class="contents_con">
-					
+					<div class="text_con">
+						<div class="title_con">
+							<span>
+								<span class="color_text">서포터즈 이룸</span>과 <br />
+								함께합니다.
+							</span>
+						</div>
+
+						<div class="intro_con">
+							<span>
+								서포터즈 이룸과 함께하는 <br class="w_br" />
+								히어로입니다.
+							</span>
+						</div>
+
+						<div class="pn_btn_con">
+							<ul>
+								<li>
+									<img src="/img/main/main_info06_slide_prev_btn.svg" alt="슬라이드 이전 버튼" class="fx main_info06_slide_prev_btn" />
+								</li>
+								<li>
+									<img src="/img/main/main_info06_slide_next_btn.svg" alt="슬라이드 이전 버튼" class="fx main_info06_slide_next_btn" />
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="slide_con">
+						<div class="contents_con">
+							<div class="swiper main_info06_slide">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide main_info06_slide_div">
+										<div class="img_con" style="background-image:url('/img/main/main_info06_slide_img_con_none_img.png');">
+											<img src="/img/main/main_info06_slide_img_con_blank_img.png" alt="블랭크 이미지" class="fx" />
+										</div>
+									</div>
+									<div class="swiper-slide main_info06_slide_div">
+										<div class="img_con" style="background-image:url('/img/main/main_info06_slide_img_con_none_img.png');">
+											<img src="/img/main/main_info06_slide_img_con_blank_img.png" alt="블랭크 이미지" class="fx" />
+										</div>
+									</div>
+									<div class="swiper-slide main_info06_slide_div">
+										<div class="img_con" style="background-image:url('/img/main/main_info06_slide_img_con_none_img.png');">
+											<img src="/img/main/main_info06_slide_img_con_blank_img.png" alt="블랭크 이미지" class="fx" />
+										</div>
+									</div>
+									<div class="swiper-slide main_info06_slide_div">
+										<div class="img_con" style="background-image:url('/img/main/main_info06_slide_img_con_none_img.png');">
+											<img src="/img/main/main_info06_slide_img_con_blank_img.png" alt="블랭크 이미지" class="fx" />
+										</div>
+									</div>
+									<div class="swiper-slide main_info06_slide_div">
+										<div class="img_con" style="background-image:url('/img/main/main_info06_slide_img_con_none_img.png');">
+											<img src="/img/main/main_info06_slide_img_con_blank_img.png" alt="블랭크 이미지" class="fx" />
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="bg"></div>
+					</div>
 				</div>
 			</div>
 
@@ -1152,6 +1213,9 @@
 		// info05 슬라이드
 		var main_info05_slide = null;
 
+		// info06 슬라이드
+		var main_info06_slide = null;
+
 		// 화면 리사이징
 		$(window).resize(function(){
 			// 현재 window 너비
@@ -1172,6 +1236,9 @@
 
 			// info05 슬라이드 예외처리
 			$("#main_con > .info05_con > .contents_con > .contents_con > .slide_con").css({"opacity":"0","transition":"none"});
+
+			// info06 슬라이드 예외처리
+			$("#main_con > .info09_con > .contents_con > .slide_con > .contents_con").css({"opacity":"0","transition":"none"});
 
 			// 화면 너비
 			if( window.innerWidth > 1024 ){
@@ -1290,6 +1357,12 @@
 						main_info05_slide = null;
 					}
 
+					// info06 슬라이드 파괴
+					if (main_info06_slide) {
+						main_info06_slide.destroy();
+						main_info06_slide = null;
+					}
+
 					// 화면 너비
 					if( window.innerWidth > 1024 ){
 						// info05 슬라이드
@@ -1311,6 +1384,34 @@
 							});
 						}else{
 							main_info05_slide = new Swiper ('.main_info05_slide', {
+								slidesPerView: 'auto',
+								loop: false,
+								observer: true,
+								observeParents: true,
+								simulateTouch: false,
+								allowTouchMove: false,
+							});
+						}
+
+						// info06 슬라이드
+						if( $(".main_info06_slide_div").length > 3 ){
+							main_info06_slide = new Swiper ('.main_info06_slide', {
+								slidesPerView: 'auto',
+								autoplay: {
+									delay: 4000,
+									disableOnInteraction: false,
+								},
+								speed: 1500,
+								loop: true,
+								navigation: {
+									nextEl: '.main_info06_slide_next_btn',
+									prevEl: '.main_info06_slide_prev_btn',
+								},
+								observer: true,
+								observeParents: true,
+							});
+						}else{
+							main_info06_slide = new Swiper ('.main_info06_slide', {
 								slidesPerView: 'auto',
 								loop: false,
 								observer: true,
@@ -1347,6 +1448,34 @@
 								allowTouchMove: false,
 							});
 						}
+
+						// info06 슬라이드
+						if( $(".main_info06_slide_div").length > 1 ){
+							main_info06_slide = new Swiper ('.main_info06_slide', {
+								slidesPerView: 'auto',
+								autoplay: {
+									delay: 4000,
+									disableOnInteraction: false,
+								},
+								speed: 1500,
+								loop: true,
+								navigation: {
+									nextEl: '.main_info06_slide_next_btn',
+									prevEl: '.main_info06_slide_prev_btn',
+								},
+								observer: true,
+								observeParents: true,
+							});
+						}else{
+							main_info06_slide = new Swiper ('.main_info06_slide', {
+								slidesPerView: 'auto',
+								loop: false,
+								observer: true,
+								observeParents: true,
+								simulateTouch: false,
+								allowTouchMove: false,
+							});
+						}
 					}
 
 					// info01 슬라이드 예외처리
@@ -1357,6 +1486,9 @@
 
 					// info05 슬라이드 예외처리
 					$("#main_con > .info05_con > .contents_con > .contents_con > .slide_con").css({"opacity":"1","transition":"all 0.5s ease"});
+
+					// info06 슬라이드 예외처리
+					$("#main_con > .info09_con > .contents_con > .slide_con > .contents_con").css({"opacity":"1","transition":"all 0.5s ease"});
 
 					main_initialWidth = currentWidth;
 					main_isFirstLoad = false;

@@ -1,0 +1,101 @@
+											<div class="nav">
+												<div class="swiper mypage_sub02_nav_slide">
+													<div class="swiper-wrapper">
+														<div class="swiper-slide mypage_sub02_nav_slide_div">
+															<a href="/mypage/mypage_sub02.html" class="<?php if($ssMenu=='08-2-1'){?>on<?php }else{?><?php }?>">
+																후원금 입금 내역
+																<div class="bar"></div>
+															</a>
+														</div>
+														<div class="swiper-slide mypage_sub02_nav_slide_div">
+															<a href="/mypage/mypage_sub02_2.html" class="<?php if($ssMenu=='08-2-2'){?>on<?php }else{?><?php }?>">
+																지난 후원금 내기
+																<div class="bar"></div>
+															</a>
+														</div>
+														<div class="swiper-slide mypage_sub02_nav_slide_div">
+															<a href="/mypage/mypage_sub02_3.html" class="<?php if($ssMenu=='08-2-3'){?>on<?php }else{?><?php }?>">
+																기부금 영수증
+																<div class="bar"></div>
+															</a>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<script type="text/javascript" language="javascript">
+												// 초기 화면 크기 저장
+												var sub_nav_initialWidth = window.innerWidth;
+												var sub_nav_isFirstLoad = true;
+
+												// 리사이즈 예외처리
+												var sub_nav_resizeTimer;
+
+												// 나의 후원 서브 메뉴 슬라이드
+												var mypage_sub02_nav_slide = null;
+
+												// 화면 리사이징
+												$(window).resize(function() {
+													// 현재 window 너비
+													var currentWidth = window.innerWidth;
+
+													// 너비가 변경되지 않은 경우(스크롤, 상태바 동작) 무시
+													if (currentWidth === sub_nav_initialWidth && !sub_nav_isFirstLoad) {
+														return;
+													}
+
+													clearTimeout(sub_nav_resizeTimer);
+													
+													// 화면 너비
+													if( window.innerWidth > 1024 ){
+														
+													}else{
+														// 나의 후원 서브 메뉴 슬라이드 예외처리
+														$(".mypage_sub02_con > .contents_con > .nav").css({"opacity":"0","transition":"none"});	
+													}
+
+													sub_nav_resizeTimer = setTimeout(function() {
+														// 실제 리사이징이 발생한 경우에만 처리
+														if (currentWidth !== sub_nav_initialWidth || sub_nav_isFirstLoad) {
+															// 나의 후원 서브 메뉴 슬라이드 파괴
+															if (mypage_sub02_nav_slide) {
+																mypage_sub02_nav_slide.destroy();
+																mypage_sub02_nav_slide = null;
+															}
+
+															// 화면 너비
+															if( window.innerWidth > 1024 ){
+																// 나의 후원 서브 메뉴 슬라이드
+																mypage_sub02_nav_slide = new Swiper ('.mypage_sub02_nav_slide', {
+																	slidesPerView: 'auto',
+																	loop: false,
+																	observer: true,
+																	observeParents: true,
+																	simulateTouch: false,
+																	allowTouchMove: false,
+																});
+															}else{
+																// 나의 후원 서브 메뉴 슬라이드
+																mypage_sub02_nav_slide = new Swiper ('.mypage_sub02_nav_slide', {
+																	slidesPerView: 'auto',
+																	speed: 1500,
+																	loop: false,
+																	observer: true,
+																	observeParents: true,
+																});
+																
+																<?php if( $sMenu_slide != "" ){ ?>
+																// 나의 후원 서브 메뉴 슬라이드 slideTo
+																mypage_sub02_nav_slide.slideTo(<?=$sMenu_slide?>, 0);
+																<?php } ?>
+
+																// 나의 후원 서브 메뉴 슬라이드 예외처리
+																$(".mypage_sub02_con > .contents_con > .nav").css({"opacity":"1","transition":"all 0.5s ease"});
+															}
+
+															sub_nav_initialWidth = currentWidth;
+															sub_nav_isFirstLoad = false;
+														}
+													}, 500);
+												});
+											</script>

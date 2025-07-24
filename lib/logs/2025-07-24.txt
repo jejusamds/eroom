@@ -1,0 +1,7 @@
+Time : 10:32:09
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f_member_type' in 'where clause'
+Raw SQL :  Select IFNULL(COUNT(*),0) From df_site_member where f_member_type = 'P' 
+
+Time : 10:31:43
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f_member_type' in 'where clause'
+Raw SQL :  Select IFNULL(COUNT(*),0) From df_site_member where f_member_type = 'P' 
