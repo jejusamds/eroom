@@ -19,7 +19,7 @@
 				<div class="contents_con">
 					<div class="contents_con">
 						
-						<form action="" method="" autocomplete="off">
+                                               <form id="login_form" action="/controller/login_process.php" method="post" autocomplete="off">
 							<div class="login_con">
 								<div class="contents_con">
 									<div class="title_con">
@@ -32,10 +32,10 @@
 										<div class="input_con">
 											<ul>
 												<li>
-													<input type="text" name="" placeholder="아이디" class="input" />
+                                                               <input type="text" name="f_user_id" placeholder="아이디" class="input" />
 												</li>
 												<li>
-													<input type="password" name="" maxlength="12" placeholder="비밀번호" class="input" autocomplete="new-password" />
+                                                               <input type="password" name="f_password" maxlength="12" placeholder="비밀번호" class="input" autocomplete="new-password" />
 												</li>
 											</ul>
 										</div>
@@ -61,11 +61,11 @@
 													</a>
 												</li>
 												<li>
-													<a href="/mypage/" class="a_btn a_btn02">
-														<span>
-															로그인
-														</span>
-													</a>
+                                                                               <button type="submit" id="btn_login" class="a_btn a_btn02">
+                                                                               <span>
+                                                                               로그인
+                                                                               </span>
+                                                                               </button>
 												</li>
 											</ul>
 										</div>
@@ -115,9 +115,45 @@
 				<img src="/img/member/member_sub_con_bg02.png" alt="배경02" class="fx w_img" />
 				<img src="/img/member/m_member_sub_con_bg02.png" alt="모바일 배경02" class="fx m_img" />
 			</div>
-		</div>
-	</div>
+       </div>
+       </div>
+
+<script>
+    $('#login_form').on('submit', function(e){
+        e.preventDefault();
+        var id = $('input[name="f_user_id"]').val().trim();
+        var pw = $('input[name="f_password"]').val().trim();
+        if(id === ''){
+            alert('아이디를 입력해주세요.');
+            $('input[name="f_user_id"]').focus();
+            return false;
+        }
+        if(pw === ''){
+            alert('비밀번호를 입력해주세요.');
+            $('input[name="f_password"]').focus();
+            return false;
+        }
+        $.ajax({
+            url: $('#login_form').attr('action'),
+            type: 'POST',
+            data: $(this).serialize(),
+            dataType: 'json'
+        }).done(function(res){
+            if(res.result === 'ok'){
+                if(res.msg){ alert(res.msg); }
+                location.href = res.redirect || '/';
+            }else if(res.result === 'blank'){
+                alert(res.msg);
+                $('input[name="'+res.field+'"]').focus();
+            }else{
+                alert(res.msg);
+            }
+        }).fail(function(){
+            alert('서버와 통신 중 오류가 발생했습니다.');
+        });
+    });
+</script>
 
 <?php
-	include $_SERVER['DOCUMENT_ROOT'].'/include/footer.html'; 
-?>	
+       include $_SERVER['DOCUMENT_ROOT'].'/include/footer.html';
+?>

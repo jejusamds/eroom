@@ -299,31 +299,33 @@
 			</div>
 
 			<div class="right_con">
-				<div class="member_con">
-					<div class="list_con">
-						<ul>
-							<li>
-								<a href="/member/login.html">
-									로그인
-								</a>
-							</li>
-							<li class="bar_li">
-								<div class="bar"></div>
-							</li>
-							<li>
-								<a href="/member/join_step01.html">
-									회원가입
-								</a>
-							</li>
-						</ul>
-					</div>
-
-					<!--
-					<a href="/mypage/">
-						마이페이지
-					</a>
-					-->
-				</div>
+                                <?php if(!$is_login){ ?>
+                                <div class="member_con">
+                                        <div class="list_con">
+                                                <ul>
+                                                        <li>
+                                                                <a href="/member/login.html">
+                                                                        로그인
+                                                                </a>
+                                                        </li>
+                                                        <li class="bar_li">
+                                                                <div class="bar"></div>
+                                                        </li>
+                                                        <li>
+                                                                <a href="/member/join_step01.html">
+                                                                        회원가입
+                                                                </a>
+                                                        </li>
+                                                </ul>
+                                        </div>
+                                </div>
+                                <?php } else { ?>
+                                <div class="member_con">
+                                        <a href="/mypage/">
+                                                마이페이지
+                                        </a>
+                                </div>
+                                <?php } ?>
 
 				<div class="btn_con">
 					<div class="list_con">
@@ -650,30 +652,32 @@
 				</div>
 			</div>
 
-			<div class="member_con">
-				<div class="list_con">
-					<ul>
-						<li>
-							<a href="/member/login.html">
-								로그인
-							</a>
-						</li>
-						<li class="bar_li">
-							<div class="bar"></div>
-						</li>
-						<li>
-							<a href="/member/join_step01.html">
-								회원가입
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<!--
-				<a href="/mypage/">
-					마이페이지
-				</a>
-				-->
-			</div>
+                        <?php if(!$is_login){ ?>
+                        <div class="member_con">
+                                <div class="list_con">
+                                        <ul>
+                                                <li>
+                                                        <a href="/member/login.html">
+                                                                로그인
+                                                        </a>
+                                                </li>
+                                                <li class="bar_li">
+                                                        <div class="bar"></div>
+                                                </li>
+                                                <li>
+                                                        <a href="/member/join_step01.html">
+                                                                회원가입
+                                                        </a>
+                                                </li>
+                                        </ul>
+                                </div>
+                        </div>
+                        <?php } else { ?>
+                        <div class="member_con">
+                                <a href="/mypage/">
+                                        마이페이지
+                                </a>
+                        </div>
+                        <?php } ?>
 		</div>
 	</div>

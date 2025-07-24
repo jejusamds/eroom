@@ -146,7 +146,7 @@ if ($filtered['f_issue_desire'] === '1') {
 $uploadName = $uploadSaved ? implode(',', $uploadSaved) : null;
 $uploadOrig = $uploadOriginal ? implode(',', $uploadOriginal) : null;
 
-$f_user_id = isset($_SESSION['kbga_user_id']) && $_SESSION['kbga_user_id'] != '' ? $_SESSION['kbga_user_id'] : '';
+$f_user_id = isset($_SESSION['eroom_sess']) && $_SESSION['eroom_sess'] != '' ? $_SESSION['eroom_sess'] : '';
 
 //return_json(['result' => 'test', 'msg' => 'test', 'post' => $_POST, "filter" => $filtered]);
 

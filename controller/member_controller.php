@@ -3,7 +3,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/inc/global.inc";
 include $_SERVER['DOCUMENT_ROOT'] . "/inc/util_lib.inc";
 
 if (isset($_GET['mode']) && $_GET['mode'] === 'logout') {
-    unset($_SESSION['kbga_user_id']);
+    unset($_SESSION['eroom_sess']);
     // 로그아웃 후 로그인 페이지로 리다이렉트
     header('Location: /member/login.html');
     exit;
@@ -372,7 +372,7 @@ if ($filtered['mode'] === 'login') {
         return_json(['result' => 'error', 'msg' => '아이디 또는 비밀번호가 일치하지 않습니다.']);
     }
 
-    $_SESSION['kbga_user_id'] = $filtered['f_user_id'];
+    $_SESSION['eroom_sess'] = $filtered['f_user_id'];
     $_SESSION['kbga_member_type'] = $row['f_member_type'];
 
 
@@ -384,7 +384,7 @@ if ($filtered['mode'] === 'login') {
 }
 
 if ($filtered['mode'] === 'secession') {
-    if (empty($_SESSION['kbga_user_id'])) {
+    if (empty($_SESSION['eroom_sess'])) {
         return_json(['result' => 'error', 'msg' => '로그인이 필요합니다.']);
     }
 
@@ -394,7 +394,7 @@ if ($filtered['mode'] === 'secession') {
 
     $row = $db->row(
         "SELECT f_password FROM df_site_member WHERE f_user_id = :f_user_id AND is_out = 1",
-        ['f_user_id' => $_SESSION['kbga_user_id']]
+        ['f_user_id' => $_SESSION['eroom_sess']]
     );
     if (!$row || !password_verify($filtered['f_password'], $row['f_password'])) {
         return_json(['result' => 'error', 'msg' => '비밀번호가 일치하지 않습니다.']);
@@ -402,14 +402,14 @@ if ($filtered['mode'] === 'secession') {
 
     $db->query(
         "INSERT INTO df_site_member_out (f_user_id, reason) VALUES (:f_user_id, :reason)",
-        ['f_user_id' => $_SESSION['kbga_user_id'], 'reason' => $filtered['reason']]
+        ['f_user_id' => $_SESSION['eroom_sess'], 'reason' => $filtered['reason']]
     );
     $db->query(
         "UPDATE df_site_member SET is_out = 2 WHERE f_user_id = :f_user_id",
-        ['f_user_id' => $_SESSION['kbga_user_id']]
+        ['f_user_id' => $_SESSION['eroom_sess']]
     );
 
-    unset($_SESSION['kbga_user_id']);
+    unset($_SESSION['eroom_sess']);
     unset($_SESSION['kbga_member_type']);
 
     return_json([
@@ -442,7 +442,7 @@ if ($filtered['mode'] === 'modify_profile') {
 
     $rowPass = $db->row(
         "SELECT f_password FROM df_site_member WHERE f_user_id = :f_user_id",
-        ['f_user_id' => $_SESSION['kbga_user_id']]
+        ['f_user_id' => $_SESSION['eroom_sess']]
     );
     if (!$rowPass || !password_verify($filtered['f_password_old'], $rowPass['f_password'])) {
         return_json(['result' => 'error', 'msg' => '기존 비밀번호가 일치하지 않습니다.']);
@@ -500,7 +500,7 @@ if ($filtered['mode'] === 'modify_profile') {
             
             'f_affiliation_flag' => ($filtered['f_affiliation_flag'] === 'Y' ? 'Y' : 'N'),
             'f_affiliation_name' => $filtered['f_affiliation_name'] ?? null,
-            'f_user_id' => $_SESSION['kbga_user_id']
+            'f_user_id' => $_SESSION['eroom_sess']
         ];
 
         if ($changePwd) {
@@ -557,7 +557,7 @@ if ($filtered['mode'] === 'modify_profile') {
             'f_address2' => $filtered['f_address2'] ?? null,
             'f_email' => $filtered['f_email'],
             'f_email_consent' => ($filtered['f_email_consent'] === 'Y' ? 'Y' : 'N'),
-            'f_user_id' => $_SESSION['kbga_user_id']
+            'f_user_id' => $_SESSION['eroom_sess']
         ];
 
         if (!empty($filtered['f_password'])) {
