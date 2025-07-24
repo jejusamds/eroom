@@ -3,7 +3,18 @@
 include $_SERVER['DOCUMENT_ROOT'] . '/inc/global.inc';
 include $_SERVER['DOCUMENT_ROOT'] . '/inc/util_lib.inc';
 
-$is_login = !empty($_SESSION['eroom_sess']);
+$is_login = false;
+$login_user_info = null;
+if (!empty($_SESSION['eroom_sess'])) {
+    $sql = "SELECT * FROM df_site_member WHERE f_user_id = :f_user_id AND is_del = 'N' AND is_out = 'N'";
+    $db->bind("f_user_id", $_SESSION['eroom_sess']);
+    $login_user_info = $db->row($sql);
+    if ($login_user_info) {
+        $is_login = true;
+    } else {
+        unset($_SESSION['eroom_sess']);
+    }
+}
 
 // 로그인이 필요한 목록
 $login_required_pages = [
@@ -40,13 +51,6 @@ function require_login(){
 }
 require_login();
 
-$login_user_info = null;
-if ($is_login) {
-    $sql = "SELECT * FROM df_site_member WHERE f_user_id = :f_user_id ";
-    $db->bind("f_user_id", $_SESSION['eroom_sess']);
-    $login_user_info = $db->row($sql);
-}
-
 require_once $_SERVER['DOCUMENT_ROOT'] . '/inc/Mobile_Detect.php';
 $detect = new Mobile_Detect;
 
@@ -58,3 +62,4 @@ function generate_csrf_token()
 }
 $csrf_token = generate_csrf_token();
 $_SESSION['csrf_token'] = $csrf_token;
+
