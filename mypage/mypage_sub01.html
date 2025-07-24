@@ -41,7 +41,9 @@
 
 								<div class="contents_con">
 
-									<form action="" method="" autocomplete="off">
+									<form id="mypage_form" action="/controller/member_update.php" method="post" autocomplete="off">
+<input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>" />
+<input type="hidden" name="mode" value="update" />
 										<div class="mypage_sub01_con">
 											<div class="contents_con">
 												<div class="contents_div">
@@ -90,10 +92,8 @@
 																							</span>
 																						</td>
 																						<td align="left" class="info_td">
-																							<div class="mypage_info_con">
-																								<span>
-																									아이디
-																								</span>
+        <div class="mypage_info_con">
+            <span><?= htmlspecialchars($login_user_info["f_user_id"] ?? "", ENT_QUOTES) ?></span>
 																							</div>
 																						</td>
 																					</tr>
@@ -115,7 +115,7 @@
 																						</td>
 																						<td align="left" class="info_td">
 																							<div class="input_con">
-																								<input type="text" name="" maxlength="12" placeholder="비밀번호" class="input" autocomplete="new-password"/>
+<input type="password" name="f_password_old" maxlength="12" placeholder="비밀번호" class="input" autocomplete="new-password" data-required="y" data-label="기존 비밀번호를" />
 																							</div>
 																						</td>
 																					</tr>
@@ -137,7 +137,7 @@
 																						</td>
 																						<td align="left" class="info_td">
 																							<div class="input_con">
-																								<input type="text" name="" maxlength="12" placeholder="비밀번호" class="input" autocomplete="new-password"/>
+<input type="password" name="f_password" maxlength="12" placeholder="비밀번호" class="input" autocomplete="new-password" />
 																							</div>
 
 																							<div class="intro_con">
@@ -178,7 +178,7 @@
 																						</td>
 																						<td align="left" class="info_td">
 																							<div class="input_con">
-																								<input type="text" name="" maxlength="12" placeholder="비밀번호 확인" class="input" autocomplete="new-password"/>
+<input type="password" name="f_password_chk" maxlength="12" placeholder="비밀번호 확인" class="input" autocomplete="new-password" />
 																							</div>
 
 																							<!--
@@ -208,10 +208,8 @@
 																							</span>
 																						</td>
 																						<td align="left" class="info_td">
-																							<div class="mypage_info_con">
-																								<span>
-																									이름
-																								</span>
+        <div class="mypage_info_con">
+            <span><?= htmlspecialchars($login_user_info["f_user_name"] ?? "", ENT_QUOTES) ?></span>
 																							</div>
 																						</td>
 																					</tr>
@@ -232,10 +230,8 @@
 																							</span>
 																						</td>
 																						<td align="left" class="info_td">
-																							<div class="mypage_info_con">
-																								<span>
-																									0000.00.00
-																								</span>
+        <div class="mypage_info_con">
+            <span><?= htmlspecialchars($login_user_info["f_birth_date"] ?? "", ENT_QUOTES) ?></span>
 																							</div>
 																						</td>
 																					</tr>
@@ -257,7 +253,7 @@
 																						</td>
 																						<td align="left" class="info_td">
 																							<div class="input_con">
-																								<input type="tel" name="" maxlength="13" placeholder="전화번호(‘-’제외)" class="input" onkeydown="onlyNumber(this);" />
+<input type="tel" name="f_tel" maxlength="13" placeholder="전화번호(‘-’제외)" class="input" onkeydown="onlyNumber(this);" value="<?= htmlspecialchars($login_user_info["f_tel"] ?? "", ENT_QUOTES) ?>" />
 																							</div>
 																						</td>
 																					</tr>
@@ -279,7 +275,7 @@
 																						</td>
 																						<td align="left" class="info_td">
 																							<div class="input_con">
-																								<input type="tel" name="" maxlength="11" placeholder="휴대폰 번호(‘-’제외)" class="input" onkeydown="onlyNumber(this);" />
+<input type="tel" name="f_mobile" maxlength="11" placeholder="휴대폰 번호(‘-’제외)" class="input" onkeydown="onlyNumber(this);" value="<?= htmlspecialchars($login_user_info["f_mobile"] ?? "", ENT_QUOTES) ?>" />
 																							</div>
 																						</td>
 																					</tr>
@@ -301,7 +297,7 @@
 																						</td>
 																						<td align="left" class="info_td">
 																							<div class="input_con">
-																								<input type="text" name="" placeholder="이메일 주소를 적어주세요." class="input" />
+<input type="text" name="f_email" placeholder="이메일 주소를 적어주세요." class="input" value="<?= htmlspecialchars($login_user_info["f_email"] ?? "", ENT_QUOTES) ?>" />
 																							</div>
 																						</td>
 																					</tr>
@@ -327,13 +323,13 @@
 																								<tbody>
 																									<tr>
 																										<td align="left" class="input_td">
-																											<input type="text" name="" placeholder="우편번호" class="input" readonly="readonly" />
+<input type="text" name="f_addr_zip" id="f_addr_zip" placeholder="우편번호" class="input" readonly="readonly" value="<?= htmlspecialchars($login_user_info["f_addr_zip"] ?? "", ENT_QUOTES) ?>" />
 																										</td>
 																										<td align="left" class="blank_td">
 																											&nbsp;
 																										</td>
 																										<td align="left" class="btn_td">
-																											<a href="javascript:void(0);" class="a_btn">
+																											<a href="javascript:void(0);" class="a_btn" id="btn_search_addr">
 																												주소찾기
 																											</a>
 																										</td>
@@ -342,10 +338,10 @@
 																							</table>
 																						</li>
 																						<li>
-																							<input type="text" name="" placeholder="기본주소" class="input" readonly="readonly" />
+<input type="text" name="f_addr_basic" id="f_addr_basic" placeholder="기본주소" class="input" readonly="readonly" value="<?= htmlspecialchars($login_user_info["f_addr_basic"] ?? "", ENT_QUOTES) ?>" />
 																						</li>
 																						<li>
-																							<input type="text" name="" placeholder="상세주소를 입력해 주세요." class="input" />
+<input type="text" name="f_addr_detail" id="f_addr_detail" placeholder="상세주소를 입력해 주세요." class="input" value="<?= htmlspecialchars($login_user_info["f_addr_detail"] ?? "", ENT_QUOTES) ?>" />
 																						</li>
 																					</ul>
 																				</div>
@@ -382,7 +378,7 @@
 																					<ul>
 																						<li>
 																							<label class="radio_label">
-																								<input type="radio" name="tax_type" value="Y" />
+<input type="radio" name="f_tax_service" value="Y" <?= isset($login_user_info["f_tax_service"]) && $login_user_info["f_tax_service"] === "Y" ? "checked" : "" ?> />
 																								<div class="check_icon"></div>
 																								<span>
 																									등록
@@ -391,7 +387,7 @@
 																						</li>
 																						<li>
 																							<label class="radio_label">
-																								<input type="radio" name="tax_type" value="N" checked="checked" />
+<input type="radio" name="f_tax_service" value="N" <?= isset($login_user_info["f_tax_service"]) && $login_user_info["f_tax_service"] === "N" ? "checked" : "" ?> />
 																								<div class="check_icon"></div>
 																								<span>
 																									등록 안함
@@ -421,7 +417,7 @@
 																							<tr>
 																								<td align="left" class="check_td">
 																									<label class="checkbox_label">
-																										<input type="checkbox" name="" />
+<input type="checkbox" name="f_news_agree" value="Y" <?= isset($login_user_info["f_news_agree"]) && $login_user_info["f_news_agree"] === "Y" ? "checked" : "" ?> />
 																										<div class="check_icon"></div>
 																										<span>
 																											[선택] 맞춤형 월드비전 소식 및 후원 <br class="m_br" />안내를 위한 개인정보 수집 및 수신동의
@@ -473,7 +469,7 @@
 											</div>
 
 											<div class="btn_con">
-												<a href="#" class="a_btn a_btn01">
+												<a href="#" id="btn_submit" class="a_btn a_btn01">
 													저장
 												</a>
 
@@ -581,6 +577,14 @@
 			}
 		}
 	</script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="/js/form-controller.js"></script>
+<script>
+ document.getElementById("btn_search_addr").addEventListener("click",function(e){e.preventDefault();new daum.Postcode({oncomplete:function(data){var addr="";var extraAddr="";if(data.userSelectedType==="R"){addr=data.roadAddress;}else{addr=data.jibunAddress;}if(data.userSelectedType==="R"){if(data.bname!==""){extraAddr+=data.bname;}if(data.buildingName!==""){extraAddr+=(extraAddr!==""?", "+data.buildingName:data.buildingName);}if(extraAddr!==""){addr+=" ("+extraAddr+")";}}document.getElementById("f_addr_zip").value=data.zonecode;document.getElementById("f_addr_basic").value=addr;document.getElementById("f_addr_detail").focus();}}).open();});
+ const submitter=new FormSubmitter("mypage_form");
+ document.getElementById("mypage_form").addEventListener("submit",function(e){e.preventDefault();submitter.submit();});
+ document.getElementById("btn_submit").addEventListener("click",function(e){e.preventDefault();document.getElementById("mypage_form").dispatchEvent(new Event("submit"));});
+</script>
 
 <?php
 	include $_SERVER['DOCUMENT_ROOT'].'/include/footer.html'; 

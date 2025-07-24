@@ -287,7 +287,9 @@ is_del ENUM('N','Y') DEFAULT 'N',
 is_out ENUM('N','Y') DEFAULT 'N',
 sns_gubun VARCHAR(128),
 sns_id VARCHAR(500),
-sns_date datetime
+sns_date datetime,
+f_tax_service ENUM('Y','N') DEFAULT 'N',
+f_news_agree ENUM('Y','N') DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
