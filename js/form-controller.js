@@ -86,6 +86,7 @@ class FormSubmitter {
 
         // ■ 중복확인 버튼 바인딩
         const checkBtn = this.form.querySelector('#btn_check_id');
+        console.log(checkBtn);
         if (checkBtn) {
             checkBtn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -98,6 +99,7 @@ class FormSubmitter {
     async checkDuplicateId() {
         const el = this.form.querySelector('#f_user_id');
         const id = el.value.trim();
+        console.log(id);
         if (!id) {
             alert('아이디를 입력해주세요.');
             el.focus();
@@ -106,7 +108,7 @@ class FormSubmitter {
 
         const fd = new FormData();
         fd.append('mode', 'check_id');
-        fd.append('csrf_token', this.form.querySelector('input[name="csrf_token"]').value);
+        //fd.append('csrf_token', this.form.querySelector('input[name="csrf_token"]').value);
         fd.append('f_user_id', id);
 
         try {
@@ -149,7 +151,7 @@ class FormSubmitter {
     }
 
     handleResponse(data) {
-        //console.log(data);
+        console.log(data);
         if (data.result != 'ok') {
             alert(data.msg);
         }
@@ -159,9 +161,9 @@ class FormSubmitter {
                 alert(data.msg);
             }
             if (data.redirect != '') {
-                location.href = data.redirect;
+                //location.href = data.redirect;
             }
-            this.resetForm();
+            //this.resetForm();
             // 추가 리셋. id="f_auth_number"
             //$('#f_auth_number').val('');
         }
