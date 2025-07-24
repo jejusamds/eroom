@@ -1,3 +1,15 @@
+Time : 16:01:12
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'df77_eroom.df_site_member_out' doesn't exist
+Raw SQL : SELECT COUNT(*) FROM df_site_member_out
+
+Time : 15:55:05
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f_member_type' in 'where clause'
+Raw SQL :  Select IFNULL(COUNT(*),0) From df_site_member where f_member_type = 'P' 
+
+Time : 15:33:26
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f_tax_service' in 'field list'
+Raw SQL : UPDATE df_site_member SET f_tel = :f_tel,f_mobile = :f_mobile,f_email = :f_email,f_addr_zip = :f_addr_zip,f_addr_basic = :f_addr_basic,f_addr_detail = :f_addr_detail,f_tax_service = :f_tax_service,f_news_agree = :f_news_agree WHERE f_user_id = :id
+
 Time : 10:32:09
 SQLSTATE[42S22]: Column not found: 1054 Unknown column 'f_member_type' in 'where clause'
 Raw SQL :  Select IFNULL(COUNT(*),0) From df_site_member where f_member_type = 'P' 

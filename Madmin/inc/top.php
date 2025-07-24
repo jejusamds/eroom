@@ -396,18 +396,12 @@ $menu99 = array("stat_visit", "stat_url", "stat_url_view");    // 통계 현황
                     href="/Madmin/page/page_privacy.php?admin_type=privacy">개인정보처리방침</div>
                 <div class="lnb-submenu-item <? if ($admin_type == "use") { ?>on<? } ?>"
                     href="/Madmin/page/page_privacy.php?admin_type=use">이용약관</div>
-
-                <div class="lnb-submenu-item <? if ($admin_type == "privacy_use") { ?>on<? } ?>"
-                    href="/Madmin/page/page_privacy.php?admin_type=privacy_use">개인정보 수집 및 이용</div>
-                <div class="lnb-submenu-item <? if ($admin_type == "privacy_third_party") { ?>on<? } ?>"
-                    href="/Madmin/page/page_privacy.php?admin_type=privacy_third_party">개인정보 제공</div>
-                <div class="lnb-submenu-item <? if ($admin_type == "privacy_marketing") { ?>on<? } ?>"
-                    href="/Madmin/page/page_privacy.php?admin_type=privacy_marketing">마케팅목적 정보 수집</div>
-
+                <div class="lnb-submenu-item <? if ($admin_type == "email") { ?>on<? } ?>"
+                    href="/Madmin/page/page_privacy.php?admin_type=email">이메일 무단 수집 거부</div>
             </div>
 
 
-            <div class="lnb-menu <? if (in_array($gb, $menu04)) { ?>on<? } ?>">
+            <!-- <div class="lnb-menu <? if (in_array($gb, $menu04)) { ?>on<? } ?>">
                 <span class="left">
                     <i class="fa fa-bullhorn fa-lg"></i>
                     <span>팝업 설정</span>
@@ -440,7 +434,7 @@ $menu99 = array("stat_visit", "stat_url", "stat_url_view");    // 통계 현황
                     href="/Madmin/main_slide/main_slide_list.php">메인 화면 슬라이드 관리</div>
                 <div class="lnb-submenu-item <? if ($gb == 'main_image_list' || $gb == 'main_image_input') { ?>on<? } ?>"
                     href="/Madmin/main_slide/main_image_list.php">메인 화면 이미지 관리</div>
-            </div>
+            </div> -->
 
 
             <!-- <div class="lnb-menu <? if (in_array($gb, $menu03)) { ?>on<? } ?>">
@@ -461,7 +455,7 @@ $menu99 = array("stat_visit", "stat_url", "stat_url_view");    // 통계 현황
             </div> -->
 
 
-            <div class="lnb-menu <? if (in_array($gb, $menu10)) { ?>on<? } ?>">
+            <!-- <div class="lnb-menu <? if (in_array($gb, $menu10)) { ?>on<? } ?>">
                 <span class="left">
                     <i class="fa fa-building-o fa-lg"></i>
                     <span>기관 관리</span>
@@ -567,7 +561,7 @@ $menu99 = array("stat_visit", "stat_url", "stat_url_view");    // 통계 현황
                 style="display:<? if (in_array($gb, $menu08)) { ?>block;<? } else { ?>none;<? } ?>">
                 <div class="lnb-submenu-item <? if (in_array($gb, $menu08)) { ?>on<? } ?>"
                     href="/Madmin/competition/competition_list.php">대회 관리</div>
-            </div>
+            </div> -->
 
             <div class="lnb-menu <? if (in_array($gb, $menu11)) { ?>on<? } ?>">
                 <span class="left">
@@ -586,7 +580,7 @@ $menu99 = array("stat_visit", "stat_url", "stat_url_view");    // 통계 현황
                     href="/Madmin/member/member_out_list.php">탈퇴회원 조회</div>
             </div>
 
-            <div class="lnb-menu <? if (in_array($gb, $menu12)) { ?>on<? } ?>">
+            <!-- <div class="lnb-menu <? if (in_array($gb, $menu12)) { ?>on<? } ?>">
                 <span class="left">
                     <i class="fa fa-clipboard fa-lg"></i>
                     <span>신청내역 조회</span>
@@ -603,7 +597,7 @@ $menu99 = array("stat_visit", "stat_url", "stat_url_view");    // 통계 현황
                     href="/Madmin/registration/reg_competition_list.php">대회신청</div>
                 <div class="lnb-submenu-item <? if ($gb == 'reg_edu_list' || $gb == 'reg_edu_view') { ?>on<? } ?>"
                     href="/Madmin/registration/reg_edu_list.php">교육신청</div>
-            </div>
+            </div> -->
 
 
             <div class="lnb-menu <? if (in_array($gb, $menu02)) { ?>on<? } ?>">
@@ -693,6 +687,3 @@ $menu99 = array("stat_visit", "stat_url", "stat_url_view");    // 통계 현황
         <div class="clear"></div>
 
         <div id="pageContainer">
-
-
-

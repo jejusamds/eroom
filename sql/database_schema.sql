@@ -287,7 +287,9 @@ is_del ENUM('N','Y') DEFAULT 'N',
 is_out ENUM('N','Y') DEFAULT 'N',
 sns_gubun VARCHAR(128),
 sns_id VARCHAR(500),
-sns_date datetime
+sns_date datetime,
+f_tax_service ENUM('Y','N') DEFAULT 'N',
+f_news_agree ENUM('Y','N') DEFAULT 'N'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
@@ -348,6 +350,14 @@ CREATE TABLE IF NOT EXISTS `df_site_siteinfo` (
   `g_app_password` varchar(50) DEFAULT NULL,
   `g_manager_email` varchar(100) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
+
+CREATE TABLE `df_site_member_out` (
+	`idx` INT NOT NULL AUTO_INCREMENT,
+	`f_user_id` VARCHAR(50) NOT NULL COMMENT '회원 아이디',
+	`reason` TEXT NULL DEFAULT NULL COMMENT '탈퇴 사유',
+	`wdate` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	PRIMARY KEY (`idx`) USING BTREE
+);
 
 -- 내보낼 데이터가 선택되어 있지 않습니다.
 

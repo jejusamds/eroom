@@ -4,6 +4,14 @@ $sMenu = "07-2";
 $ssMenu = "07-2-2";
 
 include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
+
+// eroom_agree 세션이 있고 true 인 경우가 아니면 alert 창을 띄우고 이전 페이지로 돌아가게 합니다.
+if (!isset($_SESSION['eroom_agree']) || $_SESSION['eroom_agree'] !== true) {
+    echo "<script>alert('개인정보수집 및 이용에 동의해 주세요.'); history.back();</script>";
+    exit;
+} else {
+    // unset($_SESSION['eroom_agree']);
+}
 ?>
 
 <div id="container">

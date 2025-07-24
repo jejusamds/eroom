@@ -82,7 +82,11 @@
 											<div class="agree_con">
 												<div class="text_con">
 													<span>
-														약관동의
+														<?php
+                                                            $sql = "SELECT * FROM `df_site_page` WHERE `type` = 'privacy'";
+                                                            $result = $db->row($sql);
+                                                            echo $result['content'];
+                                                        ?>
 													</span>
 												</div>
 
@@ -136,8 +140,28 @@
                 alert('개인정보수집 및 이용에 동의해 주세요.');
                 return false; // Prevent form submission
             }
-
-            location.href = '/member/join_step02.html';
+			// /controller/agree_ajax.php
+			$.ajax({
+				url: '/controller/agree_ajax.php',
+				type: 'POST',
+				dataType: 'json',
+				contentType: 'application/json',
+				data: {},
+				success: function(response) {
+					console.log(response);
+					if (response.success) {
+						location.href = '/member/join_step02.html';
+					} else {
+						alert('일시적인 오류가 발생했습니다. 다시 시도해 주세요.');
+						return false; // Prevent form submission
+					}
+				},
+				error: function(xhr, status, error) {
+					alert('오류가 발생했습니다. 다시 시도해 주세요.');
+					return false; // Prevent form submission
+				}
+			});
+			return false; // Prevent form submission
         }
     </script>
 

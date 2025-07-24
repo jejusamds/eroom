@@ -685,7 +685,7 @@ if ($Menu == "01") {
 				<div class="member_con">
 					<div class="list_con">
 						<ul>
-							<?php if ($is_login) { ?>
+							<?php if (!$is_login) { ?>
 							<li>
 								<a href="/member/login.html">
 									로그인
