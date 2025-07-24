@@ -118,6 +118,9 @@ class FormSubmitter {
             if (json.result === 'exist') {
                 alert('이미 사용 중인 아이디입니다.');
                 el.focus();
+            } else if (json.result === 'hangul') {
+                alert('아이디에 한글은 사용할 수 없습니다.');
+                el.focus();
             } else {
                 alert('사용 가능한 아이디입니다.');
             }
@@ -161,7 +164,7 @@ class FormSubmitter {
                 alert(data.msg);
             }
             if (data.redirect != '') {
-                //location.href = data.redirect;
+                location.href = data.redirect;
             }
             //this.resetForm();
             // 추가 리셋. id="f_auth_number"
