@@ -455,7 +455,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
     document.getElementById('btn_search_addr').addEventListener('click', function (e) {
         e.preventDefault();
         new daum.Postcode({
-            oncomplete: function(data) {
+            oncomplete: function (data) {
                 var addr = '';
                 var extraAddr = '';
                 if (data.userSelectedType === 'R') {
