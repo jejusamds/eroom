@@ -448,8 +448,38 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
         });
     }
 </script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="/js/form-controller.js"></script>
 <script>
+    document.getElementById('btn_search_addr').addEventListener('click', function (e) {
+        e.preventDefault();
+        new daum.Postcode({
+            oncomplete: function(data) {
+                var addr = '';
+                var extraAddr = '';
+                if (data.userSelectedType === 'R') {
+                    addr = data.roadAddress;
+                } else {
+                    addr = data.jibunAddress;
+                }
+                if (data.userSelectedType === 'R') {
+                    if (data.bname !== '') {
+                        extraAddr += data.bname;
+                    }
+                    if (data.buildingName !== '') {
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                    if (extraAddr !== '') {
+                        addr += ' (' + extraAddr + ')';
+                    }
+                }
+                document.getElementById('f_addr_zip').value = data.zonecode;
+                document.getElementById('f_addr_basic').value = addr;
+                document.getElementById('f_addr_detail').focus();
+            }
+        }).open();
+    });
+
     const submitter = new FormSubmitter('join_form');
     document.getElementById("join_form").addEventListener("submit", function (e) {
         e.preventDefault();
