@@ -625,7 +625,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
                                 이전으로
                             </a>
 
-                            <a href="#" class="a_btn a_btn02">
+                            <a href="#" id="btn_secession" class="a_btn a_btn02">
                                 탈퇴하기
                             </a>
                         </div>
@@ -683,6 +683,28 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
     const submitter = new FormSubmitter("mypage_form");
     document.getElementById("mypage_form").addEventListener("submit", function (e) { e.preventDefault(); submitter.submit(); });
     document.getElementById("btn_submit").addEventListener("click", function (e) { e.preventDefault(); document.getElementById("mypage_form").dispatchEvent(new Event("submit")); });
+    const secessionBtn = document.getElementById("btn_secession");
+    if (secessionBtn) {
+        secessionBtn.addEventListener("click", async function (e) {
+            e.preventDefault();
+            if (!confirm("정말 탈퇴하시겠습니까?")) return;
+            const fd = new FormData();
+            fd.append("mode", "secession");
+            fd.append("csrf_token", document.querySelector('input[name="csrf_token"]').value);
+            try {
+                const res = await fetch("/controller/member_secession.php", { method: "POST", body: fd });
+                const json = await res.json();
+                if (json.result === 'ok') {
+                    alert(json.msg);
+                    window.location.href = json.redirect;
+                } else {
+                    alert(json.msg);
+                }
+            } catch (err) {
+                alert('처리 중 오류가 발생했습니다.');
+            }
+        });
+    }
 </script>
 
 <?php
