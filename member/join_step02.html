@@ -24,9 +24,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
                         <input type="hidden" name="csrf_token" value="<?= $csrf_token ?>" />
                         <input type="hidden" name="mode" value="sign_up" />
                         <input type="hidden" name="f_honey" value="" />
-                        <input type="hidden" name="f_birth_date" value="" />
-                        <input type="hidden" name="f_tel" value="" />
-                        <input type="hidden" name="f_mobile" value="" />
                         <div class="join_con">
                             <div class="contents_con">
                                 <div class="title_con">
@@ -228,7 +225,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
 
                                                         <div class="info_con">
                                                             <div class="input_con">
-                                                                <input type="tel" name="birth_temp"
+                                                                <input type="tel" name="f_birth_date"
                                                                     placeholder="법정생년월일 8자리(예: 2025.01.29)"
                                                                     id="birthdate_input" class="input" data-required="y"
                                                                     data-label="생년월일을" />
@@ -246,7 +243,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
 
                                                         <div class="info_con">
                                                             <div class="input_con">
-                                                                <input type="tel" name="tel_temp" id="tel_input"
+                                                                <input type="tel" name="f_tel" id="tel_input"
                                                                     maxlength="13" placeholder="전화번호(‘-’제외)"
                                                                     class="input" onkeydown="onlyNumber(this);"
                                                                     data-label="전화번호를" />
@@ -264,7 +261,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
 
                                                         <div class="info_con">
                                                             <div class="input_con">
-                                                                <input type="tel" name="mobile_temp" id="mobile_input"
+                                                                <input type="tel" name="f_mobile" id="mobile_input"
                                                                     maxlength="11" placeholder="휴대폰 번호(‘-’제외)"
                                                                     class="input" onkeydown="onlyNumber(this);"
                                                                     data-required="y" data-label="휴대폰 번호를" />
@@ -484,19 +481,6 @@ include $_SERVER['DOCUMENT_ROOT'] . '/include/header.html';
     const submitter = new FormSubmitter('join_form');
     document.getElementById("join_form").addEventListener("submit", function (e) {
         e.preventDefault();
-        const form = this;
-        const b = form.birth_temp.value.replace(/\D/g, "");
-        if (b.length === 8) {
-            form.f_birth_date.value = `${b.slice(0, 4)}-${b.slice(4, 6)}-${b.slice(6, 8)}`;
-        }
-        const tel = form.tel_temp.value.replace(/\D/g, "");
-        if (tel) {
-            form.f_tel.value = `${tel.slice(0, 3)}-${tel.slice(3, tel.length - 4)}-${tel.slice(tel.length - 4)}`;
-        }
-        const mobile = form.mobile_temp.value.replace(/\D/g, "");
-        if (mobile) {
-            form.f_mobile.value = `${mobile.slice(0, 3)}-${mobile.slice(3, mobile.length - 4)}-${mobile.slice(mobile.length - 4)}`;
-        }
         submitter.submit();
     });
     document.getElementById('btn_submit').addEventListener('click', function (e) {
